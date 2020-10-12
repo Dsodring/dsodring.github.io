@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!-- Meta descriptions -->
+		<meta
+			name="keywords"
+			content="daniel sødring, portfolio, mmu, digital media and communications, web designer, web developer, blog"
+		/>
+		<meta
+			name="description"
+			content="Details about how I have built my portfolio and what technologies I have used"
+		/>
+
+		<!-- Links -->
+		<link rel="stylesheet" href="/old-portfolio/css/sheet.css" />
+
+		<!-- Swup loaded from CDN & jquery -->
+		<script
+			defer
+			src="https://unpkg.com/swup@latest/dist/swup.min.js"
+		></script>
+		<script defer src="/old-portfolio/script.js"></script>
+		<script src="/old-portfolio/SwupScrollPlugin.js"></script>
+		<!-- Page transitions are done with swup library https://swup.js.org/ -->
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Title -->
+		<title>
+			Blog post about building my portfolio
+		</title>
+	</head>
+
+	<body id="top">
+		<div id="swup">
+			<header>
+				<!-- Skip to content -->
+				<div class="skip">
+					<a href="#content">Skip to content</a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="/old-portfolio/index.html">Home</a></li>
+						<li><a href="/old-portfolio/blogs.html">Blogs</a></li>
+						<li>
+							<a href="/old-portfolio/projects.html">Projects</a>
+						</li>
+						<li>
+							<a href="/old-portfolio/contact.html">Contact</a>
+						</li>
+					</ul>
+				</nav>
+				<a class="name" href="/old-portfolio/index.html"
+					>DANIEL SØDRING</a
+				>
+			</header>
+			<main class="transition-fadeup blog-post">
+				<article id="content">
+					<h1>
+						Building My Portolio
+					</h1>
+
+					<div class="blog-details">
+						<p>7th October, 2019</p>
+						<p>Daniel Sødring</p>
+					</div>
+
+					<p>
+						Here I go into more detail about how I have built my
+						portfolio, what technologies and methods I have used
+						have used and any design decisions I have made.
+					</p>
+
+					<h2>Design</h2>
+
+					<p>
+						Before designing my portfolio I browsed through
+						<a href="https://dribbble.com/">Dribbble</a> for
+						inspiration and to see what is new and trending in web
+						design. A thing I took note of was the use of bright
+						colours and vivid drawings in website design. I decided
+						to go with a slightly toned down colour palette. Using
+						pastel colours throughout my website to achieve a warmer
+						and friendlier look, while still maintaining a
+						professional appearance with the fonts Montserrat for
+						headers and Open Sans for body text.
+					</p>
+
+					<p>
+						I found an
+						<a
+							href="https://webdesign.tutsplus.com/tutorials/create-a-broken-grid-layout-using-css-grid--cms-30870"
+							>article</a
+						>, talking about a ‘broken’ grid layout with CSS Grid. I
+						Tried to replicate a similar look in my mobile and
+						desktop layout of my portfolio.
+					</p>
+
+					<figure>
+						<img
+							src="/old-portfolio/img/buildingmyportfolio/Homepage.png"
+							alt="high fidelity wireframe of my portfolio design"
+						/>
+						<figcaption>
+							High fidelity wireframe made in
+							<a href="http://figma.com/">Figma</a>
+						</figcaption>
+					</figure>
+
+					<p>
+						For my landing page I wanted to keep it simple and
+						without a lot of text. The goal was for visitors to
+						easily identify and understand who I am and what I do.
+					</p>
+
+					<p>
+						Designing my blog page I wanted to use larger pictures
+						to catch the eye follow by the title and a short
+						description of the blog posts content. I initially had
+						the idea of a side navigation for all my blog posts but
+						when coding my website I realised the three blog posts
+						did not take up a lot of space so I decided not to use
+						the menu and only implement it if more blog posts are
+						added in the future.
+					</p>
+
+					<p>
+						For my project page I wanted to keep it even more simple
+						and clean by only using a large image with the project
+						title, hoping the image or graphic will intrigue the
+						user to investigate and enter the subpage to read more
+						about the project.
+					</p>
+
+					<p>
+						I kept the contact page light and simple with a HTML
+						contact form from
+						<a href="https://formspree.io/">Formspree.io</a>, coded
+						by
+						<a href="https://twitter.com/wilsond">Derren Wilson</a>
+						and changed the style to fit the overall look of my
+						website. Initially my HTML consisted of the input name
+						and a bottom border, but in a study done by Google’s
+						Material Design on text fields, they concluded text
+						fields should either include a semi-transparent fill
+						with a bottom border or a stroke and rounded corners,
+						among other key findings (<a
+							href="https://medium.com/google-design/the-evolution-of-material-designs-text-fields-603688b3fe03"
+							>Zarasky et al., 2019</a
+						>), so I later changed it to conform to their findings.
+					</p>
+
+					<figure class="html-forms">
+						<img
+							src="/old-portfolio/img/buildingmyportfolio/form-old.jpg"
+							alt="screenshot of my old html form"
+						/><img
+							src="/old-portfolio/img/buildingmyportfolio/form-new.jpg"
+							alt="screenshot of my new html form"
+						/>
+					</figure>
+					<figcaption>
+						Old html form (left) and new html form (right)
+					</figcaption>
+
+					<h2>Build</h2>
+
+					<p>
+						I started building my website in VS Code with a mobile
+						first approach without the use CSS
+						<a
+							href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+							>flexbox</a
+						>
+						or
+						<a
+							href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+							>grid</a
+						>, as without it, the page is already fully responsive
+						and fits a mobile screen really well with minimal
+						styling. I initially had my navigation at the top like
+						on desktop websites, but in a talk on
+						<a href="https://www.youtube.com/watch?v=zfn_tVY5qRI"
+							>Designing for Speed & Hacking User Perception</a
+						>, Mustafa Kurtuldu talks about different styles of
+						navigation including hamburger menu, backdrop drawer and
+						top taps. In his talk he outlines how Facebook
+						successfully implemented a bottom navigation and saw an
+						increase in perception of speed, satisfaction and
+						engagement (<a
+							href="https://www.youtube.com/watch?v=zfn_tVY5qRI"
+							>Conversions, 2019</a
+						>), and it obviously makes sense to put the navigation
+						on the bottom on smaller devices such as smartphones as
+						we can only move our thumbs so far up the screen
+						<a
+							href="https://www.smashingmagazine.com/2016/09/the-thumb-zone-designing-for-mobile-users/"
+							>before it gets uncomfortable</a
+						>.
+					</p>
+
+					<figure class="slider">
+						<img
+							src="/old-portfolio/img/buildingmyportfolio/mobile-home.jpg"
+							alt="mobile home screen of my portfolio"
+						/>
+						<img
+							src="/old-portfolio/img/buildingmyportfolio/mobile-blogs.jpg"
+							alt="mobile blog page of my portfolio"
+						/>
+						<img
+							src="/old-portfolio/img/buildingmyportfolio/mobile-projects.jpg"
+							alt="mobile project page of my portfolio"
+						/>
+						<img
+							src="/old-portfolio/img/buildingmyportfolio/mobile-contact.jpg"
+							alt="mobile contact page of my portfolio"
+						/>
+					</figure>
+					<figcaption>
+						Screenshots of my portfolio layout in mobile size
+					</figcaption>
+
+					<p>
+						I used flexbox and grid to design my layout on screens
+						with a width larger than 900px by using media queries
+						and by using a nested grid layout I could replicate the
+						‘broken grid layout’. I decided to only have the H1 and
+						links break the grid as it would otherwise seem too
+						cluttered and the smaller text would be difficult to
+						read as it would be overlapping with images.
+					</p>
+
+					<p>
+						Before deciding on a final colour scheme I ran tests
+						with the
+						<a href="https://webaim.org/resources/contrastchecker/"
+							>WebAIM Contrast Checker</a
+						>, I initially passed the AA check on small text with
+						the original pastel red background and lighter grey
+						paragraph, but after changing the paragraph colour to
+						#222 it passed with the WCAG AAA.
+					</p>
+
+					<p>
+						I used <a href="https://swup.js.org/">Swup</a> which is
+						a JavaScript library to animate my page transitions. I
+						decided to use page transitions because they are not
+						only aesthetically pleasing but they also provide visual
+						continuity and positive feedback (<a
+							href="https://www.smashingmagazine.com/2016/07/improving-user-flow-through-page-transitions/"
+							>De Rosa, 2016</a
+						>). One of my concerns when including the Swup.JS
+						library was speed, but in a test done on Firefox, the
+						two script files were only 5.35KB and 419 B in size so
+						it did not have any noticeable impact on the loading
+						times.
+					</p>
+
+					<h2>Launch</h2>
+
+					<p>
+						I have all my files and images saved in my
+						<a href="https://github.com/Dsodring/portfolio"
+							>GitHub repository</a
+						>
+						to make sure they are kept safe and I can edit them both
+						at home and university. For hosting my website I have it
+						on
+						<a href="https://danielsodring.com"
+							>danielsodring.com</a
+						>
+						and <a href="https://www.34sp.com/">34SP.com</a> under
+						the domain
+						<a href="http://17085190.webdevmmu.uk/portfolio/"
+							>http://17085190.webdevmmu.uk/portfolio/</a
+						>
+					</p>
+					<a href="#top" class="to-top">Go to top</a>
+				</article>
+			</main>
+			<footer>
+				<ul>
+					<li>
+						<a href="https://linkedin.com/in/daniel-sodring"
+							>LinkedIn</a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/Dsodring/portfolio"
+							>GitHub</a
+						>
+					</li>
+					<li>
+						<a
+							href="//validator.w3.org/check?uri=referer"
+							title="W3C HTML Validation Service"
+							>Valid HTML</a
+						>
+					</li>
+				</ul>
+			</footer>
+		</div>
+	</body>
+</html>

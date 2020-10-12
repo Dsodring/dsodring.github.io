@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!-- Meta descriptions -->
+		<meta
+			name="keywords"
+			content="daniel sødring, portfolio, mmu, digital media and communications, web designer, web developer, weather app"
+		/>
+		<meta
+			name="description"
+			content="Weather app that shows current weather in Manchester and recommends a song, made by Daniel Sødring."
+		/>
+
+		<!-- Links -->
+		<link rel="stylesheet" href="../css/sheet.css" />
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Title -->
+		<title>
+			Weather App - Daniel S&oslash;dring
+		</title>
+	</head>
+
+	<body>
+		<header>
+			<!-- Skip to content -->
+			<div class="skip">
+				<a href="#content">Skip to content</a>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="../index.html" class="active">Home</a>
+					</li>
+					<li><a href="../blogs.html">Blogs</a></li>
+					<li><a href="../projects.html">Projects</a></li>
+					<li><a href="../contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<a class="name" href="../index.html">DANIEL SØDRING</a>
+		</header>
+		<main class="weather-app">
+			<section>
+				<label>Choose a city to see a weather report</label>
+				<select onchange="myFunction(this)">
+					<option>Choose a location</option>
+					<option value="Liverpool,uk">Liverpool, England</option>
+					<option value="London,uk">London, England</option>
+					<option value="Manchester,uk">Manchester, England</option>
+					<option value="Copenhagen,dk">Copenhagen, Denmark</option>
+					<option value="Barcelona,es">Barcelona, Spain</option>
+				</select>
+				<p id="forecast"></p>
+				<p id="weather-condition"></p>
+				<iframe
+					id="playlist"
+					src=""
+					width="300"
+					height="380"
+					frameborder="0"
+					allowtransparency="true"
+					allow="encrypted-media"
+				></iframe>
+			</section>
+		</main>
+		<footer>
+			<ul>
+				<li>
+					<a href="https://linkedin.com/in/daniel-sodring"
+						>LinkedIn</a
+					>
+				</li>
+				<li>
+					<a href="https://github.com/Dsodring/portfolio">GitHub</a>
+				</li>
+			</ul>
+			<script src="../js/weather.js"></script>
+		</footer>
+	</body>
+</html>

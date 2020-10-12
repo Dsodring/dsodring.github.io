@@ -1,0 +1,886 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+figure,
+figcaption {
+	margin: 0;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+	margin-top: 1em;
+}
+
+html {
+	background: #ff8e8e;
+	background: linear-gradient(0deg, #ff8e8e 0%, #ffa58e 100%);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+body {
+	line-height: 1.5;
+	/* Enabling scroll on all pages to make transitions smoother */
+	overflow-y: scroll;
+}
+
+/* Text styling */
+
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	color: #111;
+	font-weight: 600;
+}
+
+a,
+p,
+figcaption,
+li {
+	font-family: "Open Sans", Tahoma, Helvetica, sans-serif;
+	color: #222;
+	text-decoration: none;
+}
+
+@media screen and (min-width: 900px) {
+	a,
+	p {
+		font-size: 1.1rem;
+	}
+
+	figcaption > a {
+		font-size: initial;
+	}
+}
+
+/* Global styling, header & nav */
+img {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+header {
+	padding-top: 1rem;
+}
+
+nav {
+	background-color: #2f4858;
+	margin: auto 0;
+	position: fixed; /* Placing nav at bottom for smaller screens */
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+	padding: 0.5rem 0;
+}
+
+nav ul {
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	justify-content: center;
+}
+
+nav a {
+	color: #fff;
+	display: inline-block;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	padding: 0.5rem 0.5rem;
+	margin: 0 0.4rem;
+	font-size: 0.8em;
+	border-bottom: 4px solid rgba(0, 0, 0, 0); /* Setting invisible border on other menu itens so animation doesn't 'jump' on mobile */
+}
+
+.active {
+	border-bottom: 4px solid #ff8e8e;
+}
+
+.name {
+	text-align: center;
+	font-weight: 400;
+	padding: 0;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	color: #111;
+	font-size: 2em;
+	display: block;
+	width: 100%;
+}
+
+main {
+	margin: 2rem auto;
+	width: 80%;
+}
+
+@media screen and (min-width: 900px) {
+	header {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	.active {
+		border-bottom: 4px solid #2f4858;
+	}
+
+	.name {
+		grid-column: 7 / 13;
+		grid-row: 1;
+		justify-self: center;
+		align-self: center;
+		display: initial;
+	}
+
+	nav {
+		/* Resetting nav to top of the screen */
+		position: initial;
+		background-color: initial;
+		grid-column: 1 / 8;
+		grid-row: 1;
+		justify-self: center;
+	}
+
+	nav a {
+		color: #111;
+		width: initial;
+		display: initial;
+		font-size: 1.3em;
+		padding: 0.8rem 0.5rem;
+	}
+
+	main {
+		margin-top: 4rem;
+	}
+}
+
+/* Skip to content styling */
+/* Hidden by default and is shown when focused */
+.skip a {
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: -999px;
+	top: -999px;
+	text-align: center;
+}
+
+.skip a:focus {
+	left: 0;
+	top: 0;
+	padding: 3px;
+	background: #fff;
+	border: 1px solid #990000;
+}
+
+/* Homepage styling */
+
+.cta a {
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+}
+
+.about a {
+	border-bottom: 2px solid #2f4858;
+}
+
+.cta {
+	margin-top: 2rem;
+}
+
+.cta a {
+	border-radius: 50px;
+	padding: 1rem 2rem;
+	background-color: #2f4858;
+	color: #fff;
+	font-weight: 400;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.profile-pic img {
+	border-radius: 100%;
+	max-width: 80%;
+	margin: auto;
+	display: block;
+	object-fit: cover;
+}
+
+.about h1 {
+	font-size: 2em;
+}
+
+@media screen and (min-width: 900px) {
+	.about {
+		display: grid;
+		grid-template-columns: 0.9fr 0.7fr 0.8fr 1.1fr 0.8fr;
+		grid-template-rows: 0.6fr 2fr;
+		grid-gap: 10px;
+	}
+
+	.profile-pic img {
+		max-width: 100%;
+	}
+
+	.about figure {
+		grid-column: 2 / 4;
+		grid-row: 1 / 3;
+	}
+	.about h1 {
+		font-size: 3em;
+		grid-column: 1 / 5;
+		grid-row: 1;
+		align-self: flex-end;
+		justify-self: flex-end;
+	}
+
+	.about p {
+		margin: 0;
+		grid-column: 4 / 5;
+		grid-row: 2 / 3;
+	}
+
+	.cta {
+		width: initial;
+		grid-row: 2;
+		grid-column: 4;
+		margin-top: 15rem;
+	}
+}
+
+/* Blogs page styling */
+.blogs img {
+	/* Styling images so they are all the same size and take up the same amount of space */
+	max-width: 80%;
+	margin: auto;
+	min-width: 100%;
+	display: block;
+	object-fit: cover;
+	max-height: 550px;
+}
+
+.blogs section {
+	margin-bottom: 3rem;
+}
+
+.blogs h3 a {
+	background: #485a73;
+	padding: 1.5rem 3rem;
+	color: #fff;
+	transition: 0.2s ease;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+	margin-left: 1rem;
+	text-align: center;
+	font-weight: 400;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.blogs h3 a:hover {
+	background-color: #2f4858;
+}
+
+@media screen and (min-width: 900px) {
+	.blogs {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+
+	.blogs section {
+		max-width: 80rem;
+		margin: 0 auto 3rem auto;
+	}
+
+	.blogs h2 {
+		font-size: 2em;
+	}
+
+	.blogs p {
+		margin: 0;
+	}
+
+	.blogs h3 a {
+		font-size: 1.1em;
+		margin: 0;
+	}
+
+	/* Grid layout for left-aligned blog posts */
+	/* Grid made with help from https://grid.layoutit.com/ */
+	.left {
+		display: grid;
+		grid-template-columns: 1fr 1.4fr 0.9fr 0.3fr 1.3fr;
+		grid-gap: 20px;
+	}
+
+	.left figure {
+		grid-column: 1 / 4;
+		grid-row: 1 / 4;
+	}
+
+	.left h2 {
+		align-self: flex-end;
+		grid-column: 4 / 6;
+		grid-row: 1;
+	}
+
+	.left p {
+		justify-self: flex-start;
+		grid-column: 4 / 6;
+		grid-row: 2;
+	}
+
+	.left h3 {
+		grid-column: 2 / 5;
+		justify-self: flex-end;
+		align-self: flex-start;
+		grid-row: 3;
+	}
+
+	/* Grid layout for right-aligned blog posts */
+	/* Grid made with help from https://grid.layoutit.com/ */
+	.right {
+		display: grid;
+		grid-template-columns: 1.3fr 0.3fr 0.9fr 1.4fr 1fr;
+		grid-gap: 20px;
+	}
+
+	.right figure {
+		grid-column: 3 / 6;
+		grid-row: 1 / 4;
+	}
+
+	.right h2 {
+		z-index: 1;
+		align-self: flex-end;
+		justify-self: flex-end;
+		grid-column: 1 / 3;
+		grid-row: 1;
+		text-align: end;
+	}
+
+	.right p {
+		z-index: 1;
+		grid-column: 1 / 3;
+		grid-row: 2;
+		text-align: end;
+		justify-self: flex-end;
+	}
+
+	.right h3 {
+		grid-column: 2 / 5;
+		justify-self: flex-start;
+		align-self: flex-start;
+		grid-row: 3;
+	}
+}
+
+/* My work page */
+.projects section {
+	display: flex;
+	flex-direction: column;
+}
+
+.projects section figure {
+	order: 1;
+	z-index: -1;
+}
+
+.projects section h2 {
+	order: 2;
+}
+
+.projects img {
+	box-shadow: none;
+	/* Styling images so they are all the same size and take up the same amount of space */
+	max-width: 100%;
+	margin: auto;
+	min-width: 100%;
+	min-height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.projects h2 a {
+	background: #485a73;
+	padding: 1rem;
+	color: #fff;
+	transition: 0.2s ease;
+	text-align: center;
+	margin-left: 1rem;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+	font-weight: 400;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.projects h2 a:hover {
+	background-color: #2f4858;
+}
+
+.projects figure {
+	margin-top: 2rem;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (min-width: 900px) {
+	/* Defining grid for main area*/
+	.projects {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		/* Setting <main> width back to 100% so images go to edge */
+		width: 100%;
+		grid-gap: 20px;
+	}
+
+	/* Setting it back to display: block so I can move the link around with grid */
+	.projects h2 a {
+		margin-left: 0;
+		display: block;
+	}
+
+	.projects figure {
+		overflow: hidden;
+	}
+
+	.projects figure img {
+		box-shadow: none;
+		transition: transform ease 1.5s;
+		transform-origin: 25% 10%;
+	}
+
+	.projects h2:hover ~ figure img {
+		transform: scale(1.4);
+	}
+	/* Defining grid for each project section */
+	.projects section {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.projects figure {
+		grid-column: 1 / 5;
+		grid-row: 1 / 3;
+	}
+
+	.projects section h2 {
+		grid-column: 2 / 4;
+		grid-row: 2 / 4;
+		align-self: flex-end;
+	}
+	/* Placing each block */
+	.projects section:nth-child(1) {
+		grid-column: 5 / 9;
+		grid-row: 1;
+	}
+}
+
+/* Contact page */
+form label {
+	display: block;
+	/* instead of inline */
+	padding-bottom: 0.2em;
+	padding-top: 1em;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+form div {
+	position: relative;
+}
+
+form input,
+form textarea {
+	padding: 0.4em 0.3em;
+	font-size: 1.5em;
+	/* lighter grey, less visually heavy */
+	border: 0;
+	outline: 0;
+	background: none;
+	/* make sure our fields aren't too wide or not wide enough */
+	min-width: 90%;
+	max-width: 90%;
+	color: #222;
+	/* background-color: #fff9; */
+	border-radius: 5px;
+	border: 2px solid #2f4858;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+form input[type="submit"] {
+	/* https://developer.mozilla.org/en/docs/Web/CSS/Attribute_selectors */
+	/* if you used display:block; this would go right across the page - if you use inline-block the button will only be as wide as the text and the padding */
+	min-width: 0;
+	/* turn off a minimum width for the button and let the browser work it out */
+	background-color: #485a73;
+	border: 0;
+	padding: 13px 30px;
+	margin-top: 10px;
+	/* top and bottom, left and right */
+	font-size: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	transition: background-color 0.2s ease;
+	cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+	background-color: #2f4858;
+}
+
+.contact ul li a {
+	padding: 1rem;
+}
+
+.about-contact-page h3 {
+	margin: 1rem 0;
+}
+
+.contact section {
+	margin-bottom: 2rem;
+}
+
+/* Using flexbox here and set the width of each section to 50% as it is only a two column layout */
+@media screen and (min-width: 900px) {
+	.contact {
+		display: flex;
+	}
+
+	.contact-me,
+	.about-contact-page {
+		flex: 50%;
+	}
+
+	.about-contact-page p {
+		max-width: 35rem;
+	}
+}
+
+/* blogs page styling */
+@media screen and (min-width: 900px) {
+	.blog-post p,
+	.blog-post h1,
+	.blog-post h2,
+	.blog-post figure,
+	.blog-post figcaption {
+		max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.blog-post {
+		max-width: 50rem;
+	}
+
+	.blog-details {
+		position: absolute;
+		flex-direction: column;
+		top: 0;
+		right: 1rem;
+	}
+	.blog-post h1 {
+		margin-top: 2rem;
+	}
+}
+
+.blog-post {
+	background: #2f4858;
+	padding: 1rem;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.blog-post img {
+	border: 2px solid #ff8e8e;
+	background: #ff8e8e;
+	/* Styling images so they are all the same size and take up the same amount of space */
+	max-width: 80%;
+}
+
+.blog-post a {
+	border-bottom: 2px solid #ff8e8e;
+	transition: linear 0.1s;
+	color: #eee;
+}
+
+.blog-post p,
+.blog-post h1,
+.blog-post h2,
+.blog-post figcaption {
+	color: #eee;
+}
+
+.blog-details {
+	display: inline-flex;
+	background: #fff2;
+	border-radius: 5px;
+}
+.blog-post a:hover {
+	border-bottom: 4px solid #ff8e8e;
+}
+
+.blog-details p {
+	font-size: 0.8em;
+	padding: 0.5rem 1rem;
+	margin: 0;
+}
+
+.slider {
+	display: flex;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.slider img {
+	box-shadow: none;
+	scroll-snap-align: center;
+	min-width: 50%;
+	margin-right: 1rem;
+}
+
+figcaption {
+	padding: 0 2rem;
+	font-style: italic;
+}
+
+.html-forms {
+	display: flex;
+	justify-content: center;
+}
+
+.html-forms img {
+	margin: 0 1rem;
+	max-height: 400px;
+}
+
+@media screen and (min-width: 550px) {
+	.slider {
+		box-shadow: none;
+		overflow-x: initial;
+		justify-content: center;
+	}
+	.slider img {
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+			0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+			0 16px 16px rgba(0, 0, 0, 0.12);
+		min-width: initial;
+		max-height: 400px;
+		margin: 0 1rem;
+	}
+}
+
+/* CV page */
+.cv img {
+	max-width: 20rem;
+	border-radius: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.cv-details {
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+.cv h4 {
+	font-weight: 400;
+	border-bottom: 2px solid #2f4858;
+}
+
+.cv h1 {
+	font-size: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+	.cv {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	.cv-contact {
+		grid-row: 1;
+		grid-column: 1 / 6;
+		display: grid;
+		grid-template-columns: 1fr 0.9fr;
+		grid-gap: 10px;
+		grid-template-rows: 10rem 10rem;
+	}
+
+	.cv-contact figure {
+		grid-row: 1 / 3;
+	}
+
+	.cv-contact h1 {
+		grid-row: 1;
+		grid-column: 2;
+		align-self: flex-end;
+	}
+
+	.cv-contact p {
+		margin: 0;
+		grid-row: 2;
+		grid-column: 2;
+	}
+
+	.cv-about {
+		grid-row: 2;
+		grid-column: 1 / 4;
+	}
+
+	.cv section {
+		max-width: 40rem;
+	}
+
+	.cv-about {
+		grid-row: 2 / 4;
+		grid-column: 1 / 6;
+	}
+
+	.cv-skills {
+		grid-row: 1;
+		grid-column: 7 / 12;
+	}
+
+	.cv-work {
+		grid-row: 2;
+		grid-column: 7 / 12;
+	}
+
+	.cv-education {
+		grid-row: 3;
+		grid-column: 7 / 12;
+	}
+}
+
+/* Footer */
+
+footer {
+	margin-bottom: 5rem; /* To push it above the botton nav on mobile */
+	position: relative;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+	footer {
+		margin-bottom: 2rem; /* lowering margin-bottom on larger screen without bottom nav */
+	}
+}
+
+footer ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+footer a {
+	margin: 0 0.5rem;
+	padding: 1rem;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+/* Page transitions */
+
+/* Transition for main content. */
+.transition-img {
+	/* FADE OUT */
+	opacity: 1;
+	transition: 0.4s ease-in-out;
+}
+
+html.is-animating .transition-img {
+	opacity: 0;
+}
+.transition-fadeleft {
+	/* FADE OUT LEFT */
+	opacity: 1;
+	transition: 0.4s ease-in-out;
+	transform: translateX(0px);
+}
+
+html.is-animating .transition-fadeleft {
+	opacity: 0;
+	transform: translateX(0px);
+}
+
+html.is-leaving .transition-fadeleft {
+	opacity: 0;
+	transform: translateX(-20px);
+}
+
+.transition-faderight {
+	/* FADE OUT RIGHT */
+	opacity: 1;
+	transition: 0.4s ease-in-out;
+	transform: translateX(0px);
+}
+
+html.is-animating .transition-faderight {
+	opacity: 0;
+	transform: translateX(0px);
+}
+
+html.is-leaving .transition-faderight {
+	opacity: 0;
+	transform: translateX(20px);
+}
+
+.transition-fadeup {
+	/* FADE OUT UP */
+	opacity: 1;
+	transition: 0.4s ease-in-out;
+	transform: translateY(0px);
+}
+
+html.is-animating .transition-fadeup {
+	opacity: 0;
+	transform: translateY(0px);
+}
+
+html.is-leaving .transition-fadeup {
+	opacity: 0;
+	transform: translateY(-20px);
+}
+
+/* Transition for header */
+.transition-fade {
+	/* FADE OUT */
+	transition: 0.4s ease-in-out;
+}
+
+html.is-animating .transition-fade {
+	border-bottom: 0px solid #00000000;
+}

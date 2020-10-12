@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!-- Meta descriptions -->
+		<meta
+			name="keywords"
+			content="daniel sødring, portfolio, mmu, digital media and communications, web designer, web developer, blog, api, javascript"
+		/>
+		<meta
+			name="description"
+			content="Blog post about building a web application with a weather API, the process and a walkthrough of how the JavaScript works."
+		/>
+
+		<!-- Links -->
+		<link rel="stylesheet" href="css/sheet.css" />
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Title -->
+		<title>JavaScript APIs - Blog Post - Daniel Sødring</title>
+	</head>
+
+	<body data-barba="wrapper">
+		<div class="transition-one"></div>
+		<div class="transition-two"><h1>DANIEL SØDRING</h1></div>
+		<header>
+			<!-- Skip to content -->
+			<div class="skip">
+				<a href="#content">Skip to content</a>
+			</div>
+			<nav id="top">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="blogs.html">Blogs</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<a class="name" href="index.html">DANIEL SØDRING</a>
+		</header>
+		<main class="blog-post" data-barba="container">
+			<article id="content">
+				<h1>JavaScript APIs</h1>
+
+				<p class="author">By Daniel Sødring on March 25, 2020</p>
+				<h2>The Aim</h2>
+				<p>
+					The aim of this self-initiated project to is create a
+					weather app using an API to display the weather in different
+					locations and serve recommendations accordingly.
+				</p>
+				<h2>Definition</h2>
+				<p>
+					APIs, short for application programming interfaces, are
+					tools and protocols used to build web applications, it
+					allows an application to communicate with a service to send
+					or receive information (<a
+						href="https://medium.com/@TebbaVonMathenstien/what-is-an-api-and-why-should-i-use-one-863c3365726b"
+						>Bettilyon, 2018</a
+					>). For this project, JavaScript was used with a Fetch API;
+					<a href="https://openweathermap.org/api"
+						>Openweathermap.org</a
+					>
+					to receive weather data for a list of preselected locations.
+				</p>
+				<p>
+					APIs are very common, and users may not realise how integral
+					APIs are to many products and services, some examples of
+					common APIs include showing a weather forecast, having the
+					option to log in on a website using Facebook or Twitter, or
+					even paying for something with PayPal (<a
+						href="https://nordicapis.com/5-examples-of-apis-we-use-in-our-everyday-lives/"
+						>Bush, 2019</a
+					>)
+				</p>
+				<p>
+					Fetch APIs, used in this project, will fetch data from a
+					server to dynamically update the page with new information,
+					without the user having to refresh the page.
+				</p>
+				<p>
+					Using my site as an example to explain fetch APIs, an
+					asynchronous function makes an API call by using the
+					'<i>fetch()</i>' method. It then returns a promise to
+					retrieve that information. When the promise is resolved,
+					either by successfully fetching the data or aborting it due
+					to an error, the response from the weather API is then
+					parsed as a JSON file (<a
+						href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+						>MDN contributors, 2020</a
+					>). My GSAP and Barba.JS blog post goes more in-depth about
+					asynchronous JavaScript.
+				</p>
+				<p>
+					JavaScript Object Notation (JSON) is a readable file format
+					and an alternative to XML. It is used to send data between a
+					server and a web app, e.g. the weather API and my
+					application. JSON files are made up of keys and values, the
+					values can be numbers, arrays or strings of text and are
+					sorted under keys, which is a string and it usually contains
+					words describing the content of the values (<a
+						href="https://developers.squarespace.com/what-is-json"
+						>Squarespace, no date</a
+					>).
+				</p>
+				<p>
+					Here, “main” is the key with an array of key/value pairs.
+					“Temp” being the key and 3.34, which is an integer, the
+					value.
+				</p>
+				<figure>
+					<img
+						src="img/api/json.png"
+						alt="Screenshot of a JSON file displaying the temperature and other values"
+					/>
+					<figcaption>
+						Screenshot of a JSON file displaying the temperature and
+						other values
+					</figcaption>
+				</figure>
+				<p>
+					Prior to starting this self-initiated project, I had very
+					limited experience with JavaScript syntax and only a vague
+					understanding of what APIs are and how powerful they are in
+					web applications. Through coding and working on my other
+					self-initiated project I gained some basic understanding of
+					JavaScript syntax and as APIs seems intriguing it was chosen
+					as my second self-initiated project.
+				</p>
+				<h2>Set-up</h2>
+				<p>
+					The weather app was built using my portfolio website as a
+					template, so minimal design work was required. The web
+					application was built with JavaScript and HTML.
+				</p>
+				<h2>Location</h2>
+				<ul>
+					<li>
+						<a
+							href=" https://github.com/Dsodring/portfolio/tree/master/weather-app
+						"
+							>HTML GitHub repository
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://github.com/Dsodring/portfolio/blob/master/js/weather.js"
+							>JavaScript GitHub repository</a
+						>
+					</li>
+					<li>
+						<a
+							data-barba-prevent="self"
+							href="https://danielsodring.com/weather-app/weather.html"
+							>Live demonstrator</a
+						>
+					</li>
+				</ul>
+				<h2>How</h2>
+				<h3>JavaScript</h3>
+				<p>
+					When I initially started building this app, I made a simple
+					API call to
+					<a href="https://openweathermap.org/api"
+						>Openweathermap.org</a
+					>
+					using '<i
+						>const location =
+						“http://api.openweathermap.org/data/2.5/weather?q=Manchester,uk&units=metric&APPID=#”</i
+					>' '
+				</p>
+				<p>
+					To break this API call down, '<i>weather?</i>' tells the API
+					I am asking for the current weather forecast, to call a 5
+					day / 3 hour forecast, '<i>forecast?</i>' should be used
+					instead. '<i>q=Manchester,uk</i>' tells the API the location
+					of where I want the weather from, '<i>units=metric</i>' puts
+					all the units in metric, such as using celsius instead of
+					fahrenheit and '<i>APPID=#</i>' is a personal API key you
+					get by signing up on their website.
+				</p>
+				<p>
+					Once this call is made, the data needs to be fetched in a
+					response, and that response has to be parsed as a JSON file
+					which was done the following way.
+				</p>
+				<figure>
+					<img
+						src="img/api/response.png"
+						alt="Screenshot of the JavaScript variables to parse the response as a JSON file"
+					/>
+					<figcaption>
+						Screenshot of the JavaScript variables to parse the
+						response as a JSON file
+					</figcaption>
+				</figure>
+				<p>This is the JSON file for Manchester.</p>
+				<figure>
+					<img
+						src="img/api/manchester.png"
+						alt="Screenshot of the API call for Manchester, parsed as a JSON file"
+					/>
+					<figcaption>
+						Screenshot of the API call for Manchester, parsed as a
+						JSON file
+					</figcaption>
+				</figure>
+				<p>
+					In order to retrieve the information needed from the JSON
+					file, four other variables were created.
+				</p>
+				<figure>
+					<img
+						src="img/api/variables.png"
+						alt="Screenshot of the variables required to grab the temperature, weather condition, city and country name"
+					/>
+					<figcaption>
+						Screenshot of the variables required to grab the
+						temperature, weather condition, city and country name
+					</figcaption>
+				</figure>
+				<p>
+					You can see that I previously stored the JSON file in a
+					variable named data, so by calling '<i>data.main.temp</i>'
+					the '<i>temp</i>' variable will go in the JSON file, look
+					for the '<i>main</i>' key and then find the '<i>temp</i>'
+					key and grab that value. This was also done for the weather
+					condition, city and country name. However, doing this does
+					not display the data, it is currently just stored in some
+					variables.
+				</p>
+				<h3>Displaying The Data</h3>
+				<p>
+					In order to display the data on the page, a paragraph tag
+					with an id of forecast was created and in JavaScript the
+					following code was written.
+				</p>
+				<figure>
+					<img
+						src="img/api/displaying-data.png"
+						alt="Screenshot of how JavaScript is used to display the data"
+					/>
+					<figcaption>
+						Screenshot of how JavaScript is used to display the data
+					</figcaption>
+				</figure>
+				<p>
+					This bit of code finds the paragraph and with the
+					<i>textContent</i> property, the necessary information is
+					put into the paragraph tag.
+				</p>
+				<p>
+					This however, only displays the information of one city, and
+					I wanted to give the user an option to choose different
+					locations, so a select element was used to create a drop
+					down list of different cities.
+				</p>
+				<figure>
+					<img
+						src="img/api/select-city.png"
+						alt="Screenshot of the HTML code to display a drop down menu of different locations"
+					/>
+					<figcaption>
+						Screenshot of the HTML code to display a drop down menu
+						of different locations
+					</figcaption>
+				</figure>
+				<p>
+					An <i>onchange</i> function was then used to detect whenever
+					the user changes the selected option and the value of the
+					selected option would be stored in a variable called
+					<i>city</i>.
+				</p>
+				<figure>
+					<img
+						src="img/api/city-var.png"
+						alt="Screenshot of the variable that finds the value of the selected option in the drop down menu"
+					/>
+					<figcaption>
+						Screenshot of the variable that finds the value of the
+						selected option in the drop down menu
+					</figcaption>
+				</figure>
+				<p>
+					Remember how '<i>q=Manchester,uk</i>' was used to tell the
+					API call which city to get the forecast from? Doing this
+					means the location cannot be updated, so the API call had to
+					be changed. The value of the selected option is stored in
+					the variable <i>city</i> so '<i>Manchester,uk</i>' was
+					replaced with '<i>${city}</i>' and the API call now reads
+					'<i>q=${city}</i>' which changes the API call to the
+					location of the selected option.
+				</p>
+				<h3>Using Conditional Statements</h3>
+				<p>
+					To add another aspect to this application, a Spotify
+					playlist would also be recommended depending on the weather
+					forecast.
+				</p>
+				<figure>
+					<img
+						src="img/api/if-else.png"
+						alt="Screenshot of the conditional statement, showing a spotify playlist depending on the weather forecast"
+					/>
+					<figcaption>
+						Screenshot of the conditional statement, showing a
+						spotify playlist depending on the weather forecast
+					</figcaption>
+				</figure>
+				<figure>
+					<img
+						src="img/api/iframe.png"
+						alt="Screenshot of the iframe with the empty src attribute"
+					/>
+					<figcaption>
+						Screenshot of the iframe with the empty src attribute
+					</figcaption>
+				</figure>
+				<p>
+					The default <i>iframe</i> tag from embedding Spotify
+					playlists was put in the HTML, however, the
+					<i>src</i> attribute was left empty. In JavaScript, the
+					variable <i>weather</i> grabs the current weather conditions
+					from the JSON file and the conditional statement then uses
+					‘<i>document.getElementById().src</i>’ to change the
+					<i>src</i>
+					attribute of the <i>iframe</i>, depending on the current
+					weather conditions.
+				</p>
+				<h2>Evaluation</h2>
+				<p>
+					The aim was successfully achieved and it is possible to
+					choose different locations to see how the weather is. This
+					is just one demonstration of what APIs can do and there are
+					endless possibilities, however, this was a solid starting
+					point and while trying to work with APIs with no prior
+					knowledge proved difficult, the application was successfully
+					built.
+				</p>
+				<h2>References</h2>
+				<p>
+					Bettilyon, E. T. (2018)
+					<i>What Is an API and Why Should I Use one?</i> January 11.
+					Medium. [Online] [Accessed March 25, 2020] <br /><a
+						href="https://medium.com/@TebbaVonMathenstien/what-is-an-api-and-why-should-i-use-one-863c3365726b
+					"
+						>https://medium.com/@TebbaVonMathenstien/what-is-an-api-and-why-should-i-use-one-863c3365726b
+					</a>
+				</p>
+				<p>
+					Bush, T. (2019)
+					<i>5 Examples of APIs We Use in Our Everyday Lives</i>.
+					December 10. Nordic APIs. [Online] [Accessed March 25, 2020]
+					<br /><a
+						href="https://nordicapis.com/5-examples-of-apis-we-use-in-our-everyday-lives/"
+						>https://nordicapis.com/5-examples-of-apis-we-use-in-our-everyday-lives/</a
+					>
+				</p>
+				<p>
+					MDN. (2020) <i>Fetch API</i>. March 19. [Online] [Accessed
+					March 25, 2020]<br /><a
+						href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+					"
+						>https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+					</a>
+				</p>
+				<p>
+					Squarespace. (no date) <i>What is JSON?</i>. [Online]
+					[Accessed March 25, 2020] <br /><a
+						href="https://developers.squarespace.com/what-is-json
+					"
+						>https://developers.squarespace.com/what-is-json
+					</a>
+				</p>
+				<a href="#top">Go to top</a>
+			</article>
+		</main>
+		<footer>
+			<ul class="socials">
+				<li>
+					<a href="https://linkedin.com/in/daniel-sodring"
+						><img src="/img/linkedin.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://github.com/Dsodring/portfolio"
+						><img src="/img/github.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/daniel.sodring/"
+						><img src="/img/facebook.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/Danielsodring"
+						><img src="/img/twitter.png"
+					/></a>
+				</li>
+			</ul>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+			<script src="https://unpkg.com/@barba/core"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.5/ScrollToPlugin.min.js"></script>
+			<script src="js/transition.js"></script>
+		</footer>
+	</body>
+</html>

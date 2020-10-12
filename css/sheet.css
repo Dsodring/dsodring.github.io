@@ -1,0 +1,903 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+figure,
+figcaption {
+	margin: 0;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+	margin-top: 1em;
+}
+
+html {
+	background: #f6eee3;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	line-height: 1.5;
+	/* Enabling scroll on all pages to make transitions smoother */
+	overflow-y: scroll;
+}
+
+/* Text styling */
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+h1 {
+	font-size: 3em;
+	color: #ca2c31;
+}
+
+h2 {
+	font-size: 2em;
+	color: #ca2c31;
+}
+
+a,
+p,
+figcaption,
+li {
+	font-family: "Open Sans", Tahoma, Helvetica, sans-serif;
+	color: #000;
+	text-decoration: none;
+}
+
+@media screen and (min-width: 900px) {
+	a,
+	p {
+		font-size: 1.1rem;
+	}
+
+	figcaption > a {
+		font-size: initial;
+	}
+}
+
+/* Global styling, header & nav */
+img {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+header {
+	padding-top: 1rem;
+}
+
+nav {
+	background-color: #dde1e4;
+	/* margin: auto 0; */
+	position: fixed; /* Placing nav at bottom for smaller screens */
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+	padding: 0.5rem 0;
+	z-index: 30; /* setting the z-index higher than the transition, so the mobile menu is always visible*/
+}
+
+nav ul {
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	justify-content: center;
+}
+
+nav a {
+	color: #000;
+	display: inline-block;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	padding: 0.5rem 0.5rem;
+	margin: 0 0.4rem;
+	font-size: 0.8em;
+	border-bottom: 4px solid rgba(0, 0, 0, 0); /* Setting invisible border on other menu itens so animation doesn't 'jump' on mobile */
+}
+
+.name {
+	text-align: center;
+	padding: 0;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	color: #ca2c31;
+	font-size: 3em;
+	display: block;
+	width: 100%;
+}
+
+main {
+	margin: 2rem auto;
+	width: 80%;
+}
+
+@media screen and (min-width: 900px) {
+	header {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	.name {
+		grid-column: 1 / 8;
+		grid-row: 1;
+		justify-self: center;
+		align-self: center;
+		display: initial;
+	}
+
+	nav {
+		/* Resetting nav to top of the screen */
+		position: initial;
+		background-color: initial;
+		grid-column: 7 / 13;
+		grid-row: 1;
+		justify-self: center;
+		align-self: center;
+		z-index: initial;
+	}
+
+	nav a {
+		color: #000;
+		width: initial;
+		display: initial;
+		font-size: 1.3em;
+		padding: 0.8rem 0.5rem;
+	}
+
+	main {
+		margin-top: 4rem;
+	}
+}
+
+/* Skip to content styling */
+/* Hidden by default and is shown when focused */
+.skip a {
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: -999px;
+	top: -999px;
+	text-align: center;
+}
+
+.skip a:focus {
+	left: 0;
+	top: 0;
+	padding: 3px;
+	background: #fff;
+	border: 1px solid #990000;
+}
+
+/* Homepage styling */
+.about a {
+	border-bottom: 2px solid #ca2c31;
+	transition: 0.2s;
+}
+
+.about a:hover {
+	transition: 0.2s;
+	border-bottom: 4px solid #ca2c31;
+}
+
+.profile-pic img {
+	max-width: 80%;
+	margin: auto;
+	display: block;
+	object-fit: cover;
+}
+
+@media screen and (min-width: 900px) {
+	.about {
+		display: grid;
+		grid-template-columns: 0.9fr 0.7fr 0.8fr 1.1fr 0.8fr;
+		grid-template-rows: 0.6fr 2fr;
+		grid-gap: 10px;
+	}
+
+	.profile-pic img {
+		max-width: 100%;
+	}
+
+	.about figure {
+		grid-column: 2 / 4;
+		grid-row: 1 / 3;
+	}
+	.about h1 {
+		z-index: 5;
+		grid-column: 1 / 5;
+		grid-row: 1;
+		align-self: flex-end;
+		justify-self: flex-end;
+	}
+
+	.about p {
+		margin: 0;
+		grid-column: 4 / 5;
+		grid-row: 2 / 3;
+	}
+}
+
+/* Blogs page styling */
+.blogs img {
+	/* Styling images so they are all the same size and take up the same amount of space */
+	max-width: 80%;
+	margin: auto;
+	min-width: 100%;
+	display: block;
+	object-fit: cover;
+	max-height: 550px;
+}
+
+.blogs section {
+	margin-bottom: 3rem;
+}
+
+.blogs h3 a {
+	background: #ca2c31;
+	transition: 0.2;
+	padding: 1.5rem 3rem;
+	color: #000;
+	transition: 0.2s ease;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+	margin-left: 1rem;
+	text-align: center;
+	font-weight: 400;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+
+.blogs h3 a:hover {
+	transition: 0.2s;
+	background-color: #97151a;
+}
+
+@media screen and (min-width: 900px) {
+	.blogs {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+
+	.blogs section {
+		max-width: 80rem;
+		margin: 0 auto 3rem auto;
+	}
+
+	.blogs p {
+		margin: 0;
+	}
+
+	.blogs h3 a {
+		font-size: 1.1em;
+		margin: 0;
+	}
+
+	/* Grid layout for left-aligned blog posts */
+	/* Grid made with help from https://grid.layoutit.com/ */
+	.left {
+		display: grid;
+		grid-template-columns: 1fr 1.4fr 0.9fr 0.3fr 1.3fr;
+		grid-gap: 20px;
+	}
+
+	.left figure {
+		grid-column: 1 / 4;
+		grid-row: 1 / 4;
+	}
+
+	.left h2 {
+		align-self: flex-end;
+		grid-column: 4 / 6;
+		grid-row: 1;
+	}
+
+	.left p {
+		justify-self: flex-start;
+		grid-column: 4 / 6;
+		grid-row: 2;
+	}
+
+	.left h3 {
+		grid-column: 2 / 5;
+		justify-self: flex-end;
+		align-self: flex-start;
+		grid-row: 3;
+	}
+
+	/* Grid layout for right-aligned blog posts */
+	/* Grid made with help from https://grid.layoutit.com/ */
+	.right {
+		display: grid;
+		grid-template-columns: 1.3fr 0.3fr 0.9fr 1.4fr 1fr;
+		grid-gap: 20px;
+	}
+
+	.right figure {
+		grid-column: 3 / 6;
+		grid-row: 1 / 4;
+	}
+
+	.right h2 {
+		z-index: 1;
+		align-self: flex-end;
+		justify-self: flex-end;
+		grid-column: 1 / 3;
+		grid-row: 1;
+		text-align: end;
+	}
+
+	.right p {
+		z-index: 1;
+		grid-column: 1 / 3;
+		grid-row: 2;
+		text-align: end;
+		justify-self: flex-end;
+	}
+
+	.right h3 {
+		grid-column: 2 / 5;
+		justify-self: flex-start;
+		align-self: flex-start;
+		grid-row: 3;
+	}
+}
+
+/* My projects page */
+
+/* Contact page */
+.contact h2 {
+	color: #ca2c31;
+}
+
+form label {
+	display: block;
+	/* instead of inline */
+	padding-bottom: 0.2em;
+	padding-top: 1em;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+form div {
+	position: relative;
+}
+
+form input,
+form textarea {
+	padding: 0.4em 0.3em;
+	font-size: 1.5em;
+	/* lighter grey, less visually heavy */
+	border: 0;
+	outline: 0;
+	background: none;
+	/* make sure our fields aren't too wide or not wide enough */
+	min-width: 90%;
+	max-width: 90%;
+	color: #000;
+	/* background-color: #fff9; */
+	border: 2px solid #000;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+form input[type="submit"] {
+	/* https://developer.mozilla.org/en/docs/Web/CSS/Attribute_selectors */
+	/* if you used display:block; this would go right across the page - if you use inline-block the button will only be as wide as the text and the padding */
+	min-width: 0;
+	/* turn off a minimum width for the button and let the browser work it out */
+	background-color: #ca2c31;
+	transition: 0.2s;
+	border: 0;
+	padding: 13px 30px;
+	margin-top: 10px;
+	/* top and bottom, left and right */
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+#contact-name:hover,
+#contact-email:hover,
+#contact-message:hover {
+	transition: 0.2s;
+	border-color: #97151a;
+}
+
+.contact ul li a {
+	padding: 1rem;
+}
+
+.about-contact-page h3 {
+	margin: 1rem 0;
+}
+
+.contact section {
+	margin-bottom: 2rem;
+}
+
+.submit-form:hover {
+	transition: 0.2s;
+	background-color: #97151a;
+}
+
+/* Using flexbox here and set the width of each section to 50% as it is only a two column layout */
+@media screen and (min-width: 900px) {
+	.contact {
+		display: flex;
+	}
+
+	.contact-me,
+	.about-contact-page {
+		flex: 50%;
+	}
+
+	.about-contact-page p {
+		max-width: 35rem;
+	}
+}
+
+/* blogs page styling */
+@media screen and (min-width: 900px) {
+	.blog-post p,
+	.blog-post h1,
+	.blog-post h2,
+	.blog-post h3,
+	.blog-post figure,
+	.blog-post figcaption,
+	.blog-post ul {
+		max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.blog-post {
+		max-width: 50rem;
+	}
+
+	.blog-post h1 {
+		margin-top: 2rem;
+	}
+}
+
+.blog-post li {
+	padding: 0.5rem;
+}
+
+.author {
+	font-size: 1em;
+	font-style: italic;
+}
+
+.blog-post {
+	width: 100%;
+	padding: 1rem;
+}
+
+.blog-post h3 {
+	color: #ca2c31;
+}
+
+.blog-post article {
+	position: relative;
+}
+
+.blog-post img {
+	border: 2px solid #e7d6c4;
+	background: #e7d6c4;
+	max-width: 80%;
+	margin: 0 1rem;
+	max-height: 400px;
+}
+
+.blog-post a {
+	border-bottom: 2px solid #ca2c31;
+	transition: 0.2s;
+}
+
+.blog-post a:hover {
+	transition: 0.2s;
+	border-bottom: 4px solid #ca2c31;
+}
+
+figcaption {
+	padding: 0 2rem;
+	font-style: italic;
+}
+
+/* CV page */
+.cv img {
+	max-width: 20rem;
+	display: block;
+	object-fit: cover;
+}
+
+.cv-details {
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+.cv-skills ul li {
+	list-style: square;
+}
+
+.cv h4 {
+	font-weight: 400;
+	border-bottom: 2px solid #ca2c31;
+}
+
+.cv h1 {
+	font-size: 2em;
+}
+
+.cv a {
+	border-bottom: 2px solid #ca2c31;
+	transition: 0.2s;
+}
+
+.cv a:hover {
+	transition: 0.2s;
+	border-bottom: 4px solid #ca2c31;
+}
+
+@media screen and (min-width: 900px) {
+	.cv {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	.cv-contact {
+		grid-row: 1;
+		grid-column: 1 / 6;
+		display: grid;
+		grid-template-columns: 1fr 0.9fr;
+		grid-gap: 10px;
+		grid-template-rows: 10rem 10rem;
+	}
+
+	.cv-contact figure {
+		grid-row: 1 / 3;
+	}
+
+	.cv-contact h1 {
+		grid-row: 1;
+		grid-column: 2;
+		align-self: flex-end;
+		font-size: 3em;
+	}
+
+	.cv-contact p {
+		margin: 0;
+		grid-row: 2;
+		grid-column: 2;
+	}
+
+	.cv-about {
+		grid-row: 2;
+		grid-column: 1 / 4;
+	}
+
+	.cv section {
+		max-width: 40rem;
+	}
+
+	.cv-about {
+		grid-row: 2 / 4;
+		grid-column: 1 / 6;
+	}
+
+	.cv-skills {
+		grid-row: 1;
+		grid-column: 7 / 12;
+	}
+
+	.cv-work {
+		grid-row: 2;
+		grid-column: 7 / 12;
+	}
+
+	.cv-education {
+		grid-row: 3;
+		grid-column: 7 / 12;
+	}
+}
+
+/* Projects page */
+.project-one img {
+	width: 100%;
+	max-width: 200px;
+	height: auto;
+}
+
+.project-two img {
+	width: 100%;
+	max-width: 700px;
+	height: auto;
+}
+
+.projects a {
+	font-size: 1.2em;
+	padding: 1rem 2rem;
+	text-transform: uppercase;
+	background-color: #ca2c31;
+	transition: 0.2s;
+	color: #fff;
+	display: inline-block;
+	margin-top: 0.5rem;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+	width: 200px;
+}
+
+.project-left {
+	display: flex;
+	flex-direction: column;
+}
+
+.project-right {
+	display: flex;
+	flex-direction: column;
+}
+
+.projects a:hover {
+	transition: 0.2s;
+	background-color: #97151a;
+}
+.projects section {
+	margin-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+	h1 {
+		line-height: 3.5rem;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.project-one a {
+		position: absolute;
+		bottom: 140px;
+		left: 104px;
+	}
+
+	.project-one h1 {
+		display: block;
+		position: absolute;
+		top: 90px;
+		left: 104px;
+		transform: rotate(90deg);
+	}
+
+	.project-one {
+		position: relative;
+	}
+
+	.project-two a {
+		position: absolute;
+		bottom: 20px;
+		right: 100px;
+	}
+
+	.project-two h1 {
+		line-height: 1;
+		display: block;
+		position: absolute;
+		top: 90px;
+		right: -23px;
+		transform: rotate(90deg);
+	}
+
+	.project-two {
+		position: relative;
+	}
+
+	.project-right img {
+		align-self: flex-end;
+		margin-right: 10rem;
+	}
+}
+
+/* Project one - User Experience Design - University Project */
+.project-page {
+	max-width: 50rem;
+	margin: auto;
+}
+
+.ux-process {
+	font-weight: 600;
+	font-size: 1.2em;
+}
+
+.project-page a {
+	border-bottom: 2px solid #ca2c31;
+	transition: 0.2s;
+}
+
+.project-page a:hover {
+	transition: 0.2s;
+	border-bottom: 4px solid #ca2c31;
+}
+
+.project-links li {
+	padding-bottom: 1em;
+}
+
+.project-page img {
+	background-color: #e7d6c4;
+	border: 2px solid #e7d6c4;
+}
+
+.uxd-userflow {
+	width: 100%;
+	max-width: 900px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.uxd-gif {
+	display: block;
+	margin: 2rem auto;
+}
+
+@media screen and (min-width: 900px) {
+	.uxd-image-gallery {
+		display: flex;
+	}
+}
+
+/* TODO Fully responsive image */
+.uxd-image-gallery img {
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+}
+
+.uxd-image-gallery li {
+	padding: 1rem;
+}
+
+/* Footer */
+
+footer {
+	margin-bottom: 2rem;
+	position: relative;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+	footer {
+		margin-bottom: 5rem; /* increasing bottom margin to push socials above the bottom nav on mobile */
+	}
+}
+
+.socials {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+	.socials {
+		flex-direction: row;
+	}
+}
+.socials a {
+	margin: 0 0.2rem;
+	padding: 1rem;
+}
+
+.socials img {
+	height: 25px;
+	width: 25px;
+	box-shadow: none;
+	vertical-align: middle;
+}
+
+/* Transitions */
+
+.transition-one,
+.transition-two {
+	position: fixed;
+	z-index: 20;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+	transform: scaleX(0);
+}
+
+.transition-one {
+	background-color: #ca2c31;
+}
+
+.transition-two {
+	background-color: #e7d6c4;
+}
+
+.transition-two h1 {
+	position: absolute;
+	top: 45%;
+	left: 20%;
+}
+
+@media (min-width: 900px) {
+	.transition-two h1 {
+		left: 35%;
+	}
+}
+
+/* WEATHER APP */
+
+.weather-app select {
+	display: block;
+	font-family: "Montserrat", Tahoma, Helvetica, sans-serif;
+	background-color: #f6eee3;
+	border: 2px solid #ca2c31;
+	transition: 0.2s;
+	height: 45px;
+	width: 220px;
+	padding: 0 0.7rem;
+	margin: 0;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+		0 16px 16px rgba(0, 0, 0, 0.12);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; /* Remove default arrow */
+	background-image: url(../img/arrow-downn.svg); /* Add custom arrow */
+	background-repeat: no-repeat, repeat;
+	background-position: right 0.7em top 50%, 0 0;
+	background-size: 1.3em;
+	cursor: pointer;
+	font-weight: 600;
+}
+.weather-app select:hover {
+	background-color: #f6eee3;
+	border: 2px solid #97151a;
+	transition: 0.2s;
+}
+
+.weather-app select option {
+	font-weight: 400;
+}
+
+.weather-app label {
+	font-family: "Montserrat", Tahoma, Helvetica, sans-serif;
+}

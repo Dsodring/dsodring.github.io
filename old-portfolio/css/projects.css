@@ -1,0 +1,30 @@
+/* Project 1 - Student Shopping Guide */
+
+.mss {
+	max-width: 45rem;
+}
+.mss img {
+	max-width: 100%;
+	margin: 1rem;
+}
+
+.mss p {
+	max-width: 35rem;
+}
+
+.process {
+	display: flex;
+}
+
+.mss figure {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+@media screen and (min-width: 900px) {
+	.mss figure {
+		flex-wrap: nowrap;
+	}
+}

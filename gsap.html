@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!-- Meta descriptions -->
+		<meta
+			name="keywords"
+			content="daniel sødring, portfolio, mmu, digital media and communications, web designer, web developer, blog, gsap, barba"
+		/>
+		<meta
+			name="description"
+			content="Blog post about updating my portfolio with GSAP and Barba and how these JavaScript libraries work."
+		/>
+
+		<!-- Links -->
+		<link rel="stylesheet" href="css/sheet.css" />
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Title -->
+		<title>
+			GSAP And Barba.JS - Blog Post - Daniel Sødring
+		</title>
+	</head>
+
+	<body data-barba="wrapper">
+		<div class="transition-one"></div>
+		<div class="transition-two"><h1>DANIEL SØDRING</h1></div>
+		<header>
+			<!-- Skip to content -->
+			<div class="skip">
+				<a href="#content">Skip to content</a>
+			</div>
+			<nav id="top">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="blogs.html">Blogs</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<a class="name" href="index.html">DANIEL SØDRING</a>
+		</header>
+		<main class="blog-post" data-barba="container">
+			<article id="content">
+				<h1>
+					GSAP And Barba.JS
+				</h1>
+
+				<p class="author">By Daniel Sødring on March 22, 2020</p>
+				<h2>The Aim</h2>
+				<p>
+					The aim of this self-initiated project is to replace Swup.JS
+					with GSAP and Barba.JS to add more customisable animations
+					and page transitions.
+				</p>
+				<h2>Definition</h2>
+				<p>
+					<a href="https://greensock.com/gsap/">GSAP</a> (GreenSock
+					Animation Platform) is a JavaScript library that allows
+					users to build custom animations with a minimal performance
+					hit, with the minified script file being 57.35 KB. By using
+					the GSAP timeline tool, it is possible to build complex
+					animation sequences, with a precise control over the timing
+					(<a
+						href="https://medium.com/free-code-camp/the-beginners-guide-to-the-greensock-animation-platform-7dc9fd9eb826"
+						>Kramer, 2018</a
+					>).
+				</p>
+				<p>
+					<a href="https://github.com/barbajs/barba">Barba.JS</a> is
+					another JavaScript library that helps users create simple
+					page transitions on a website, and if used in conjunction
+					with GSAP, intricate transitions can be created (<a
+						href="https://github.com/barbajs/barba"
+						>Barba, no date</a
+					>).
+				</p>
+				<p>
+					GSAP 3 and Barba.JS v2 was used for this demonstrator, which
+					resulted in some issues, which will be explained in the
+					‘How’ section.
+				</p>
+				<p>
+					Designers are in essence, storytellers. When designing a
+					website for yourself, you are trying to tell the story of
+					who you are. Animations prevent abrupt changes and allow for
+					a fluid and seamless browsing experience, which helps tell a
+					story (<a
+						href="https://www.smashingmagazine.com/2018/10/improving-usability-landing-pages-animation-slides/"
+						>Babich, 2018</a
+					>). By using animations to give hints or leave breadcrumbs
+					as to what the user is supposed to click next, the website
+					will also have a better user experience, and according to
+					Luigi De Rosa, page transitions can help users maintain
+					their focus and also provide visual continuity and positive
+					feedback (<a
+						href="https://www.smashingmagazine.com/2016/07/improving-user-flow-through-page-transitions/"
+						>De Rosa, 2016</a
+					>).
+				</p>
+				<p>
+					Starting this project I had no prior experience with GSAP or
+					Barba and a very limited understanding of JavaScript. My
+					portfolio previously used Swup, which is also a JavaScript
+					library, for the page transitions, so some understanding of
+					best practices and how animations work was learned through
+					using that. However, as the transitions for Swup had to be
+					coded in CSS, the options were rather limited compared to
+					GSAP, which is also why GSAP was chosen as a project.
+				</p>
+				<h2>Set-up</h2>
+				<p>
+					The demonstrator was built in Visual Studio Code and the
+					languages used were HTML, CSS and JavaScript.
+				</p>
+				<p>
+					As the foundation for this demonstrator is my portfolio, no
+					extra HTML or CSS was needed, and the JavaScript libraries
+					were imported with a CDN.
+				</p>
+				<h2>Location</h2>
+				<p>
+					<ul>
+					<li><a href="https://github.com/Dsodring/portfolio"
+					>GitHub repository</a
+				></li>
+					<li><a href="https://danielsodring.com/">Live website</a></li>
+					</ul>
+				</p>
+				<h2>How</h2>
+				<h3>Barba.JS</h3>
+				<p>
+					Barba v2 <a href="https://barba.js.org/docs/getstarted/intro/">specific markup structure</a> required to work:
+				</p>
+				<figure><img src="img/gsap/barba.png" alt="barba markup structure"><figcaption>Barba markup structure</figcaption></figure>
+				<p>
+					This is the default markup structure, the ‘wrapper’ contains all the contents of the page and the ‘container’ defines what content will be updated by Barba. The Page Transitions
+				To actually create the page transitions in JavaScript with GSAP and Barba, a certain syntax is required as well.
+				</p>
+				<p>In my case, two functions are defined first.</p>
+				<ul>
+					<li>pageTransition</li>
+					<li>contentAnimation</li>
+				</ul>
+				<p>
+					pageTransition is the function for GSAP animations in charge of the page transitions, and contentAnimation is used for animating the content in, once the pageTransition function has been completed.
+				</p>
+				<p>
+					Because Barba treats the transitions as asynchronous, a delay function with a promise is used to make sure the contentAnimation function does not start until the pageTransition function is done and the new content is ready.
+				</p>
+				<p>
+					To explain how asynchronous code works in a simple way, my page transition is an array of two <a href="https://barba.js.org/docs/userguide/syntax/#Hooks">hooks</a>, leave and enter.
+				</p>
+				<figure>
+					<img src="img/gsap/pagetransition.png" alt="screenshot of the enter and leave hooks">
+					<figcaption>Screenshot of the enter and leave hooks</figcaption>
+				</figure>
+				<p>
+					<i>Leave</i> is responsible for the pageTransition animations and changing the page content, <i>enter</i> fires the contentAnimation which fades in the content. However, if the contentAnimation function tries to start before the actual content is loaded, an error will occur as it cannot animate nothing, so a promise and/or a delay is used to make sure the content actually exists, before Barba tries to animate it. <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts">Mozilla goes more in-depth</a> and uses a different example.
+				</p>
+				<p>
+					I mentioned a <i>promise</i> which is one of two ways of doing asynchronous code, the other being callbacks. In order for the <i>enter</i> hook to start, the <i>leave</i> hook ‘promises’ that it will get an answer (e.g. the content) as soon as possible so the enter function can start. A <i>promise</i> is basically: ‘saying nothing has happened yet, but you can start running your code and I will get you the content’ (<a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing">Mozilla, 2020</a>)
+				</p>
+				<h3>GSAP</h3>
+				<p>
+					GSAP animations are coded in JavaScript and they can manipulate CSS properties, SVGs and DOM elements. With GSAP you have the option to either create a timeline of animations, which are executed in a sequence or a ‘stand-alone’ animation.
+				</p>
+				<p>
+					I added GSAP animations to the pageTransition and contentAnimation functions. Unlike Barba, GSAP is quite simple. The pageTransition function uses a ‘timeline’:
+				</p>
+				<figure>
+					<img src="img/gsap/timeline.png" alt="screenshot of the contentAnimation timeline">
+					<figcaption>Screenshot of the contentAnimation timeline</figcaption>
+				</figure>
+				<p>
+					Which essentially goes through each ‘tl.to()’ and carries them out one-by-one. The ‘.to()’ is used to define the destination values, e.g. how it will be displayed in the browser. There is also ‘.from()’ which defines where elements start, and they then animate to the default/current values set in CSS. The codepen will show how it looks live.
+				</p>
+				<p class="codepen" data-height="400" data-theme-id="dark" data-default-tab="js,result" data-user="dsodring" data-slug-hash="qBdMYrL" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="GSAP demo">
+					<span>See the Pen <a href="https://codepen.io/dsodring/pen/qBdMYrL">
+					GSAP demo</a> by Daniel Sødring (<a href="https://codepen.io/dsodring">@dsodring</a>)
+					on <a href="https://codepen.io">CodePen</a>.</span>
+				  </p>
+				  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+				<p>
+					These are called Tweens, and they can also be combined into a ‘.fromTo()’ which defines both the starting and end point. The reason I have not used the ‘.fromTo()’ is because a scroll plugin is also used to scroll the window to the top during the pageTransition function, otherwise if a blog post further down the page was clicked, the blog post page would also open scrolled halfway down. That is prevented with the ‘tl.to(window) tween’ which scrolls the browser back up when the screen is covered by the transition div.
+				</p>
+				<h3>Issues & Limitations</h3>
+				<p>
+					Barba V2 treats the website as a SPA which means scripts will only initialise on the first page loaded, and not when another page is entered. So outside of the GSAP animations used for the page transitions, it was not possible to animate anything else.
+				</p>
+				<p>
+					With the exception of that limitation, this demonstrator was produced without issues or any errors, except for one; when on a HTMLfile in a folder such as the blogs or the project page, and one of the menu links are clicked in the nav, the following error occurs. As a temporary fix, all the HTML files have been moved to the root folder.
+				</p>
+				<h2>Evaluation</h2>
+				<p>
+					While the aim was successfully achieved, by animating the page transitions with GSAP, it was not possible to add extra micro-interactions due to the limitation described above, Barba is however working on a plugin that fixes that issue.</p>
+				<h2>References</h2>
+				<p>
+					Babich, N. (2018) <i>Practical Suggestions To Improve Usability Of Landing Pages WIth Animation From Slides</i>. October 9. Smashing Magazine. [Online] [Accessed March 21, 2020]<br><a href="https://www.smashingmagazine.com/2018/10/improving-usability-landing-pages-animation-slides/">https://www.smashingmagazine.com/2018/10/improving-usability-landing-pages-animation-slides/</a>
+				</p>
+				<p>
+					Barba. (no date) <i>Create badass, fluid and smooth transition between your website’s pages</i>. [Online] [Accessed March 21, 2020]<br><a href="https://github.com/barbajs/barba">https://github.com/barbajs/barba</a>
+				</p>
+				<p>
+					De Rosa, L. (2016) <i>Improving User Flow Through Page Transitions</i>. Smashing Magazine. [Online] [Accessed March 21, 2020]<br><a href="https://www.smashingmagazine.com/2016/07/improving-user-flow-through-page-transitions/">https://www.smashingmagazine.com/2016/07/improving-user-flow-through-page-transitions/</a>
+				</p>
+				<p>
+					Kramer, N. (2018) <i>The Beginner’s Guide to the GreenSock Animation Platform</i>. February 20. Medium. [Online] [Accessed March 21, 2020]<br><a href="https://medium.com/free-code-camp/the-beginners-guide-to-the-greensock-animation-platform-7dc9fd9eb826">https://medium.com/free-code-camp/the-beginners-guide-to-the-greensock-animation-platform-7dc9fd9eb826</a>
+				</p>
+				<p>
+					MDN. (2020) <i>Introducing asynchronous JavaScript</i>. February 28. [Online] [Accessed March 21, 2020]<br><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing</a>
+				</p>
+				<a href="#top">Go to top</a>
+			</article>
+		</main>
+		<footer>
+			<ul class="socials">
+				<li>
+					<a href="https://linkedin.com/in/daniel-sodring"
+						><img src="/img/linkedin.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://github.com/Dsodring/portfolio"
+						><img src="/img/github.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/daniel.sodring/"
+						><img src="/img/facebook.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/Danielsodring"
+						><img src="/img/twitter.png"
+					/></a>
+				</li>
+			</ul>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+			<script src="https://unpkg.com/@barba/core"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.5/ScrollToPlugin.min.js"></script>
+			<script src="js/transition.js"></script>
+		</footer>
+	</body>
+</html>

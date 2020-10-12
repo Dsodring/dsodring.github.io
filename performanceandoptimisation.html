@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!-- Meta descriptions -->
+		<meta
+			name="keywords"
+			content="daniel sødring, portfolio, mmu, digital media and communications, web designer, web developer, blog"
+		/>
+		<meta
+			name="description"
+			content="Details of how I optimised my portfolio for the web by reducing image sizes among other things"
+		/>
+
+		<!-- Links -->
+		<link rel="stylesheet" href="css/sheet.css" />
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Title -->
+		<title>Performance And Optimisation - Blog Post - Daniel Sødring</title>
+	</head>
+
+	<body data-barba="wrapper">
+		<div class="transition-one"></div>
+		<div class="transition-two"><h1>DANIEL SØDRING</h1></div>
+		<header>
+			<!-- Skip to content -->
+			<div class="skip">
+				<a href="#content">Skip to content</a>
+			</div>
+			<nav id="top">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="blogs.html">Blogs</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<a class="name" href="index.html">DANIEL SØDRING</a>
+		</header>
+		<main class="blog-post" data-barba="container">
+			<article id="content">
+				<h1>Performance And Optimisation</h1>
+
+				<p class="author">By Daniel Sødring on October 10, 2019</p>
+
+				<h2>Code</h2>
+
+				<p>
+					By using CSS grid, flexbox I have been able to design and
+					layout my content with minimal code, compared to the
+					out-dated techniques with floats which also required a lot
+					of padding and margins to make the layout work. Flexbox only
+					works for one-dimensional layouts so I have used that to
+					style my overall page layout as it flows down the screen
+					with very few lines of code, similarly for grid, which I
+					have used for individual sections to achieve a 'broken grid'
+					layout, because it works for two-dimensional layouts.
+				</p>
+
+				<p>
+					To further reduce the lines of code needed in my CSS I have
+					used global styling and resets on my headers, paragraphs,
+					figures and lists so it applies across all my pages and I do
+					not have to apply a font family or adjust margins
+					individually on each page. I have also reviewed my CSS
+					several times to try and limit the amount of unused CSS.
+				</p>
+
+				<p>
+					As I have also used a
+					<a href="https://swup.js.org/">JavaScript library</a>
+					for my page transitions I made sure to use their minified
+					version to save space as well as ‘defer’ them so they as the
+					last thing, because the JavaScript code is only used for
+					animating content when clicking on internal links.
+				</p>
+
+				<h2>Optimisation</h2>
+
+				<p>
+					No matter the size of any given website, images will be
+					responsible for the majority of web content (<a
+						href="https://speedcurve.com/blog/web-performance-page-bloat/"
+						>Everts, 2019</a
+					>), so it was the highest priority for me to make sure they
+					were optimised for a smooth experience when browsing my
+					portfolio. To ensure that I optimised all images by reducing
+					their size and applying compression to them. I did this with
+					the website <a href="https://squoosh.app/">Squoosh</a> which
+					at the same time allowed me to convert the images into JPEG
+					as that format is better and more optimised for the web.
+				</p>
+
+				<p>
+					Importing and using custom fonts also takes up a significant
+					amount of space. I only used two fonts and two font weights
+					to make sure my custom fonts would not slow down the loading
+					times of my website.
+				</p>
+
+				<h2>SEO Integration</h2>
+
+				<p>
+					I made sure to include both meta keywords, custom meta
+					descriptions to show what is on my subpages and custom
+					titles on all my pages for SEO purposes. For my anchor text
+					I avoided using words such as ‘click here’ or ‘read more’ as
+					they do not explain what the link does and is therefore not
+					SEO friendly.
+				</p>
+
+				<p>
+					Using semantic HTML to indicate a clear page structure with
+					header, main and footer along with nav, h1, h2, h3, p and
+					figures also allows search engines to easily understand and
+					sort the content of my portfolio, so I made sure to have a
+					clear structure and limit the use of div tags throughout my
+					HTML. By including alt text on all my images it tells the
+					search engine what that image is and makes it easier to
+					understand, plus including alt text is also very important
+					for accessibility in regards to screen readers. To further
+					increase accessibility I also decided to include a ‘skip to
+					content’ link at the very top of all pages that is only
+					shown when focused with a keyboard.
+				</p>
+
+				<a href="#top">Go to top</a>
+			</article>
+		</main>
+		<footer>
+			<ul class="socials">
+				<li>
+					<a href="https://linkedin.com/in/daniel-sodring"
+						><img src="/img/linkedin.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://github.com/Dsodring/portfolio"
+						><img src="/img/github.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/daniel.sodring/"
+						><img src="/img/facebook.png"
+					/></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/Danielsodring"
+						><img src="/img/twitter.png"
+					/></a>
+				</li>
+			</ul>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+			<script src="https://unpkg.com/@barba/core"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.5/ScrollToPlugin.min.js"></script>
+			<script src="js/transition.js"></script>
+		</footer>
+	</body>
+</html>
