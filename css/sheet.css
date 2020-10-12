@@ -22,7 +22,7 @@ article > * + * {
 }
 
 html {
-	background: #f6eee3;
+	background: #222;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -45,17 +45,17 @@ h2,
 h3,
 h4 {
 	font-family: "Montserrat", Arial, Helvetica, sans-serif;
-	color: #000;
+	color: #fff;
 }
 
 h1 {
 	font-size: 3em;
-	color: #ca2c31;
+	color: #de6367;
 }
 
 h2 {
 	font-size: 2em;
-	color: #ca2c31;
+	color: #de6367;
 }
 
 a,
@@ -63,7 +63,7 @@ p,
 figcaption,
 li {
 	font-family: "Open Sans", Tahoma, Helvetica, sans-serif;
-	color: #000;
+	color: #fff;
 	text-decoration: none;
 }
 
@@ -109,7 +109,7 @@ nav ul {
 }
 
 nav a {
-	color: #000;
+	color: #fff;
 	display: inline-block;
 	font-family: "Montserrat", Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
@@ -123,8 +123,8 @@ nav a {
 	text-align: center;
 	padding: 0;
 	font-family: "Montserrat", Arial, Helvetica, sans-serif;
-	color: #ca2c31;
-	font-size: 3em;
+	color: #de6367;
+	font-size: 1.5em;
 	display: block;
 	width: 100%;
 }
@@ -160,7 +160,7 @@ main {
 	}
 
 	nav a {
-		color: #000;
+		color: #fff;
 		width: initial;
 		display: initial;
 		font-size: 1.3em;
@@ -188,18 +188,18 @@ main {
 	top: 0;
 	padding: 3px;
 	background: #fff;
-	border: 1px solid #990000;
+	border: 1px solid #de6367;
 }
 
 /* Homepage styling */
 .about a {
-	border-bottom: 2px solid #ca2c31;
+	border-bottom: 2px solid #de6367;
 	transition: 0.2s;
 }
 
 .about a:hover {
 	transition: 0.2s;
-	border-bottom: 4px solid #ca2c31;
+	border-bottom: 4px solid #de6367;
 }
 
 .profile-pic img {
@@ -256,10 +256,10 @@ main {
 }
 
 .blogs h3 a {
-	background: #ca2c31;
+	background: #de6367;
 	transition: 0.2;
 	padding: 1.5rem 3rem;
-	color: #000;
+	color: #fff;
 	transition: 0.2s ease;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
 		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
@@ -371,7 +371,7 @@ main {
 
 /* Contact page */
 .contact h2 {
-	color: #ca2c31;
+	color: #de6367;
 }
 
 form label {
@@ -397,9 +397,9 @@ form textarea {
 	/* make sure our fields aren't too wide or not wide enough */
 	min-width: 90%;
 	max-width: 90%;
-	color: #000;
+	color: #fff;
 	/* background-color: #fff9; */
-	border: 2px solid #000;
+	border: 2px solid #fff;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
@@ -408,7 +408,7 @@ form input[type="submit"] {
 	/* if you used display:block; this would go right across the page - if you use inline-block the button will only be as wide as the text and the padding */
 	min-width: 0;
 	/* turn off a minimum width for the button and let the browser work it out */
-	background-color: #ca2c31;
+	background-color: #de6367;
 	transition: 0.2s;
 	border: 0;
 	padding: 13px 30px;
@@ -428,7 +428,7 @@ form input[type="submit"] {
 #contact-email:hover,
 #contact-message:hover {
 	transition: 0.2s;
-	border-color: #97151a;
+	border-color: #de6367;
 }
 
 .contact ul li a {
@@ -445,7 +445,7 @@ form input[type="submit"] {
 
 .submit-form:hover {
 	transition: 0.2s;
-	background-color: #97151a;
+	background-color: #de6367;
 }
 
 /* Using flexbox here and set the width of each section to 50% as it is only a two column layout */
@@ -502,7 +502,7 @@ form input[type="submit"] {
 }
 
 .blog-post h3 {
-	color: #ca2c31;
+	color: #de6367;
 }
 
 .blog-post article {
@@ -518,13 +518,13 @@ form input[type="submit"] {
 }
 
 .blog-post a {
-	border-bottom: 2px solid #ca2c31;
+	border-bottom: 2px solid #de6367;
 	transition: 0.2s;
 }
 
 .blog-post a:hover {
 	transition: 0.2s;
-	border-bottom: 4px solid #ca2c31;
+	border-bottom: 4px solid #de6367;
 }
 
 figcaption {
@@ -550,7 +550,7 @@ figcaption {
 
 .cv h4 {
 	font-weight: 400;
-	border-bottom: 2px solid #ca2c31;
+	border-bottom: 2px solid #de6367;
 }
 
 .cv h1 {
@@ -558,13 +558,13 @@ figcaption {
 }
 
 .cv a {
-	border-bottom: 2px solid #ca2c31;
+	border-bottom: 2px solid #de6367;
 	transition: 0.2s;
 }
 
 .cv a:hover {
 	transition: 0.2s;
-	border-bottom: 4px solid #ca2c31;
+	border-bottom: 4px solid #de6367;
 }
 
 @media screen and (min-width: 900px) {
@@ -646,7 +646,7 @@ figcaption {
 	font-size: 1.2em;
 	padding: 1rem 2rem;
 	text-transform: uppercase;
-	background-color: #ca2c31;
+	background-color: #de6367;
 	transition: 0.2s;
 	color: #fff;
 	display: inline-block;
@@ -737,13 +737,13 @@ figcaption {
 }
 
 .project-page a {
-	border-bottom: 2px solid #ca2c31;
+	border-bottom: 2px solid #de6367;
 	transition: 0.2s;
 }
 
 .project-page a:hover {
 	transition: 0.2s;
-	border-bottom: 4px solid #ca2c31;
+	border-bottom: 4px solid #de6367;
 }
 
 .project-links li {
@@ -844,11 +844,11 @@ footer {
 }
 
 .transition-one {
-	background-color: #ca2c31;
+	background-color: #de6367;
 }
 
 .transition-two {
-	background-color: #e7d6c4;
+	background-color: #222;
 }
 
 .transition-two h1 {
@@ -869,7 +869,7 @@ footer {
 	display: block;
 	font-family: "Montserrat", Tahoma, Helvetica, sans-serif;
 	background-color: #f6eee3;
-	border: 2px solid #ca2c31;
+	border: 2px solid #de6367;
 	transition: 0.2s;
 	height: 45px;
 	width: 220px;
@@ -890,7 +890,7 @@ footer {
 }
 .weather-app select:hover {
 	background-color: #f6eee3;
-	border: 2px solid #97151a;
+	border: 2px solid #de6367;
 	transition: 0.2s;
 }
 
