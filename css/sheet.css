@@ -54,8 +54,12 @@ h1 {
 }
 
 h2 {
-	font-size: 2em;
+	font-size: 2.2em;
 	color: #f8494f;
+}
+
+h3 {
+	font-size: 1.8em;
 }
 
 a,
@@ -199,12 +203,13 @@ main {
 }
 
 #right-arrow {
-	max-height: 20px;
 	transition: 0.2s ease-in-out;
 }
 
 #right-arrow,
 #down-arrow {
+	max-height: 20px;
+
 	box-shadow: none;
 }
 
@@ -252,9 +257,13 @@ main {
 
 	.home-cv {
 		margin: 0;
-		grid-column: 1;
+		grid-column: 1 / 3;
 		grid-row: 2;
 		align-self: center;
+	}
+
+	.home-cv a {
+		padding: 1rem 2rem 1rem 0;
 	}
 
 	.home-cv:hover #right-arrow {
@@ -267,6 +276,7 @@ main {
 		grid-row: 4;
 		align-self: center;
 		justify-self: center;
+		font-size: 1.2em;
 	}
 
 	.about #down-arrow {
@@ -281,7 +291,6 @@ main {
 		margin-top: 10rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
 		grid-gap: 10px;
 	}
 
@@ -289,30 +298,27 @@ main {
 		box-shadow: none;
 	}
 
-	.homepage-projects h4 {
-		font-weight: 400;
+	.homepage-projects h3 {
+		margin: 0.5rem 0;
 	}
 
-	.homepage-projects p > img {
+	.homepage-projects h4 {
+		font-weight: 400;
+		margin: 0.5rem 0;
+	}
+
+	.homepage-projects a > img {
 		max-width: 18px;
 	}
 
-	.homepage-projects p {
+	.homepage-projects a {
 		font-family: "Montserrat", Arial, Helvetica, sans-serif;
+		padding: 2rem 2rem 2rem 0;
 	}
 
-	.homepage-projects ul {
-		grid-column: 1;
-	}
-
-	.ux-two,
-	.ux-two-img {
-		grid-row: 2;
-	}
-
-	.ux-one,
-	.ux-one-img {
-		grid-row: 3;
+	.homepage-projects a,
+	.homepage-projects a > img {
+		margin-top: 5rem;
 	}
 
 	.ux-one,
@@ -321,15 +327,18 @@ main {
 		justify-self: center;
 	}
 
-	.ux-one h3,
-	.ux-one h4,
-	.ux-one a, 
-	.ux-two h3,
-	.ux-two h4,
-	.ux-two a, {
-		padding: 2rem;
+	.ux-two,
+	.ux-two-img {
+		grid-row: 2;
+		margin-top: 5rem;
 	}
 
+	.ux-one,
+	.ux-one-img {
+		grid-row: 3;
+		margin-top: 10rem;
+	}
+}
 
 /* Blogs page styling */
 .blogs img {
@@ -457,8 +466,6 @@ main {
 		grid-row: 3;
 	}
 }
-
-/* My projects page */
 
 /* Contact page */
 .contact h2 {
