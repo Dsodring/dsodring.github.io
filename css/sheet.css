@@ -50,12 +50,12 @@ h4 {
 
 h1 {
 	font-size: 3em;
-	color: #de6367;
+	color: #f8494f;
 }
 
 h2 {
 	font-size: 2em;
-	color: #de6367;
+	color: #f8494f;
 }
 
 a,
@@ -123,7 +123,7 @@ nav a {
 	text-align: center;
 	padding: 0;
 	font-family: "Montserrat", Arial, Helvetica, sans-serif;
-	color: #de6367;
+	color: #f8494f;
 	font-size: 1.5em;
 	display: block;
 	width: 100%;
@@ -188,57 +188,148 @@ main {
 	top: 0;
 	padding: 3px;
 	background: #fff;
-	border: 1px solid #de6367;
+	border: 1px solid #f8494f;
 }
 
 /* Homepage styling */
-.about a {
-	border-bottom: 2px solid #de6367;
-	transition: 0.2s;
-}
-
-.about a:hover {
-	transition: 0.2s;
-	border-bottom: 4px solid #de6367;
-}
 
 .profile-pic img {
-	max-width: 80%;
-	margin: auto;
 	display: block;
 	object-fit: cover;
+}
+
+#right-arrow {
+	max-height: 20px;
+	transition: 0.2s ease-in-out;
+}
+
+#right-arrow,
+#down-arrow {
+	box-shadow: none;
+}
+
+.home-cv a {
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 0.8em;
+}
+
+.about h3 {
+	font-weight: 400;
+}
+
+.homepage-projects h2 {
+	font-weight: 400;
 }
 
 @media screen and (min-width: 900px) {
 	.about {
 		display: grid;
-		grid-template-columns: 0.9fr 0.7fr 0.8fr 1.1fr 0.8fr;
-		grid-template-rows: 0.6fr 2fr;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
 		grid-gap: 10px;
+		height: 80vh;
 	}
 
 	.profile-pic img {
 		max-width: 100%;
+		max-height: 100%;
 	}
 
-	.about figure {
-		grid-column: 2 / 4;
-		grid-row: 1 / 3;
+	.profile-pic {
+		grid-column: 4 / 6;
+		grid-row: 1 / 4;
 	}
 	.about h1 {
-		z-index: 5;
-		grid-column: 1 / 5;
-		grid-row: 1;
-		align-self: flex-end;
-		justify-self: flex-end;
+		font-size: 4.5em;
+		grid-column: 1 / 4;
+		grid-row: 1 / 3;
+		align-self: center;
+		justify-self: center;
+		line-height: normal;
+		margin-right: 12rem;
 	}
 
-	.about p {
+	.home-cv {
 		margin: 0;
-		grid-column: 4 / 5;
-		grid-row: 2 / 3;
+		grid-column: 1;
+		grid-row: 2;
+		align-self: center;
 	}
-}
+
+	.home-cv:hover #right-arrow {
+		transform: translateX(10px);
+		transition: 0.2s ease-in-out;
+	}
+
+	.about h3 {
+		grid-column: 2 / 5;
+		grid-row: 4;
+		align-self: center;
+		justify-self: center;
+	}
+
+	.about #down-arrow {
+		grid-column: 2/5;
+		grid-column: 2 / 5;
+		grid-row: 5;
+		align-self: center;
+		justify-self: center;
+	}
+
+	.homepage-projects {
+		margin-top: 10rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
+		grid-gap: 10px;
+	}
+
+	.homepage-projects img {
+		box-shadow: none;
+	}
+
+	.homepage-projects h4 {
+		font-weight: 400;
+	}
+
+	.homepage-projects p > img {
+		max-width: 18px;
+	}
+
+	.homepage-projects p {
+		font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	}
+
+	.homepage-projects ul {
+		grid-column: 1;
+	}
+
+	.ux-two,
+	.ux-two-img {
+		grid-row: 2;
+	}
+
+	.ux-one,
+	.ux-one-img {
+		grid-row: 3;
+	}
+
+	.ux-one,
+	.ux-two {
+		align-self: center;
+		justify-self: center;
+	}
+
+	.ux-one h3,
+	.ux-one h4,
+	.ux-one a, 
+	.ux-two h3,
+	.ux-two h4,
+	.ux-two a, {
+		padding: 2rem;
+	}
+
 
 /* Blogs page styling */
 .blogs img {
@@ -256,7 +347,7 @@ main {
 }
 
 .blogs h3 a {
-	background: #de6367;
+	background: #f8494f;
 	transition: 0.2;
 	padding: 1.5rem 3rem;
 	color: #fff;
@@ -371,7 +462,7 @@ main {
 
 /* Contact page */
 .contact h2 {
-	color: #de6367;
+	color: #f8494f;
 }
 
 form label {
@@ -408,7 +499,7 @@ form input[type="submit"] {
 	/* if you used display:block; this would go right across the page - if you use inline-block the button will only be as wide as the text and the padding */
 	min-width: 0;
 	/* turn off a minimum width for the button and let the browser work it out */
-	background-color: #de6367;
+	background-color: #f8494f;
 	transition: 0.2s;
 	border: 0;
 	padding: 13px 30px;
@@ -428,7 +519,7 @@ form input[type="submit"] {
 #contact-email:hover,
 #contact-message:hover {
 	transition: 0.2s;
-	border-color: #de6367;
+	border-color: #f8494f;
 }
 
 .contact ul li a {
@@ -445,7 +536,7 @@ form input[type="submit"] {
 
 .submit-form:hover {
 	transition: 0.2s;
-	background-color: #de6367;
+	background-color: #f8494f;
 }
 
 /* Using flexbox here and set the width of each section to 50% as it is only a two column layout */
@@ -502,7 +593,7 @@ form input[type="submit"] {
 }
 
 .blog-post h3 {
-	color: #de6367;
+	color: #f8494f;
 }
 
 .blog-post article {
@@ -518,13 +609,13 @@ form input[type="submit"] {
 }
 
 .blog-post a {
-	border-bottom: 2px solid #de6367;
+	border-bottom: 2px solid #f8494f;
 	transition: 0.2s;
 }
 
 .blog-post a:hover {
 	transition: 0.2s;
-	border-bottom: 4px solid #de6367;
+	border-bottom: 4px solid #f8494f;
 }
 
 figcaption {
@@ -550,7 +641,7 @@ figcaption {
 
 .cv h4 {
 	font-weight: 400;
-	border-bottom: 2px solid #de6367;
+	border-bottom: 2px solid #f8494f;
 }
 
 .cv h1 {
@@ -558,13 +649,13 @@ figcaption {
 }
 
 .cv a {
-	border-bottom: 2px solid #de6367;
+	border-bottom: 2px solid #f8494f;
 	transition: 0.2s;
 }
 
 .cv a:hover {
 	transition: 0.2s;
-	border-bottom: 4px solid #de6367;
+	border-bottom: 4px solid #f8494f;
 }
 
 @media screen and (min-width: 900px) {
@@ -646,7 +737,7 @@ figcaption {
 	font-size: 1.2em;
 	padding: 1rem 2rem;
 	text-transform: uppercase;
-	background-color: #de6367;
+	background-color: #f8494f;
 	transition: 0.2s;
 	color: #fff;
 	display: inline-block;
@@ -676,7 +767,7 @@ figcaption {
 }
 
 @media (max-width: 900px) {
-	h1 {
+	.project-two h1 {
 		line-height: 3.5rem;
 	}
 }
@@ -737,13 +828,13 @@ figcaption {
 }
 
 .project-page a {
-	border-bottom: 2px solid #de6367;
+	border-bottom: 2px solid #f8494f;
 	transition: 0.2s;
 }
 
 .project-page a:hover {
 	transition: 0.2s;
-	border-bottom: 4px solid #de6367;
+	border-bottom: 4px solid #f8494f;
 }
 
 .project-links li {
@@ -844,7 +935,7 @@ footer {
 }
 
 .transition-one {
-	background-color: #de6367;
+	background-color: #f8494f;
 }
 
 .transition-two {
@@ -869,7 +960,7 @@ footer {
 	display: block;
 	font-family: "Montserrat", Tahoma, Helvetica, sans-serif;
 	background-color: #f6eee3;
-	border: 2px solid #de6367;
+	border: 2px solid #f8494f;
 	transition: 0.2s;
 	height: 45px;
 	width: 220px;
@@ -881,7 +972,7 @@ footer {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none; /* Remove default arrow */
-	background-image: url(../img/arrow-downn.svg); /* Add custom arrow */
+	background-image: url(../img/arrow-down.svg); /* Add custom arrow */
 	background-repeat: no-repeat, repeat;
 	background-position: right 0.7em top 50%, 0 0;
 	background-size: 1.3em;
@@ -890,7 +981,7 @@ footer {
 }
 .weather-app select:hover {
 	background-color: #f6eee3;
-	border: 2px solid #de6367;
+	border: 2px solid #f8494f;
 	transition: 0.2s;
 }
 
