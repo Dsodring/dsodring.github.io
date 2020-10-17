@@ -220,7 +220,6 @@ main {
 #right-arrow,
 #down-arrow {
 	max-height: 20px;
-
 	box-shadow: none;
 }
 
@@ -232,6 +231,27 @@ main {
 
 .homepage-projects h2 {
 	font-weight: 400;
+}
+
+.homepage-about {
+	margin-top: 10rem;
+}
+
+.timeline {
+	width: 100%;
+	margin: 5rem 0;
+}
+
+.timeline img {
+	width: 50%;
+	box-shadow: none;
+	display: block;
+	margin: auto;
+}
+
+.homepage-about p {
+	max-width: 40rem;
+	margin: 1.5rem auto;
 }
 
 @media screen and (min-width: 900px) {
