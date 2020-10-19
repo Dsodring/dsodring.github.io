@@ -54,7 +54,7 @@ h1 {
 }
 
 h2 {
-	font-size: 2.2em;
+	font-size: 2em;
 	color: #f8494f;
 }
 
@@ -71,7 +71,7 @@ li {
 	text-decoration: none;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	a,
 	p {
 		font-size: 1.1rem;
@@ -138,7 +138,7 @@ main {
 	width: 80%;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	header {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
@@ -185,6 +185,7 @@ main {
 	left: -999px;
 	top: -999px;
 	text-align: center;
+	color: #000;
 }
 
 .skip a:focus {
@@ -254,7 +255,7 @@ main {
 	margin: 1.5rem auto;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.scroll-down {
 		width: 100%;
 		text-align: center;
@@ -371,130 +372,45 @@ main {
 }
 
 /* Blogs page styling */
-.blogs img {
-	/* Styling images so they are all the same size and take up the same amount of space */
-	max-width: 80%;
-	margin: auto;
-	min-width: 100%;
-	display: block;
-	object-fit: cover;
-	max-height: 550px;
-}
 
-.blogs section {
-	margin-bottom: 3rem;
-}
-
-.blogs h3 a {
-	background: #f8494f;
-	transition: 0.2;
-	padding: 1.5rem 3rem;
+.blogs h2 {
 	color: #fff;
-	transition: 0.2s ease;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
-		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
-		0 16px 16px rgba(0, 0, 0, 0.12);
-	margin-left: 1rem;
-	text-align: center;
+}
+
+.blog-number {
 	font-weight: 400;
-	font-family: "Open Sans", Arial, Helvetica, sans-serif;
-	color: #fff;
+	color: #f8494f;
 }
 
-.blogs h3 a:hover {
-	transition: 0.2s;
-	background-color: #97151a;
+.blogs h3 {
+	font-weight: 400;
+	font-size: 1.5em;
 }
 
-@media screen and (min-width: 900px) {
-	.blogs {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-	}
+.blogs div {
+	border-top: 5px solid #f8494f;
+	margin-top: 5rem;
+}
 
-	.blogs section {
-		max-width: 80rem;
-		margin: 0 auto 3rem auto;
-	}
+.blogs div a {
+	padding: 2rem 0;
+	display: flex;
+	justify-content: space-between;
+}
 
-	.blogs p {
-		margin: 0;
-	}
+.blogs div ul {
+	padding: 0;
+	margin-right: 3rem;
+	max-width: 30rem;
+}
 
-	.blogs h3 a {
-		font-size: 1.1em;
-		margin: 0;
-	}
+.blogs img {
+	max-height: 250px;
+	object-fit: cover;
+}
 
-	/* Grid layout for left-aligned blog posts */
-	/* Grid made with help from https://grid.layoutit.com/ */
-	.left {
-		display: grid;
-		grid-template-columns: 1fr 1.4fr 0.9fr 0.3fr 1.3fr;
-		grid-gap: 20px;
-	}
-
-	.left figure {
-		grid-column: 1 / 4;
-		grid-row: 1 / 4;
-	}
-
-	.left h2 {
-		align-self: flex-end;
-		grid-column: 4 / 6;
-		grid-row: 1;
-	}
-
-	.left p {
-		justify-self: flex-start;
-		grid-column: 4 / 6;
-		grid-row: 2;
-	}
-
-	.left h3 {
-		grid-column: 2 / 5;
-		justify-self: flex-end;
-		align-self: flex-start;
-		grid-row: 3;
-	}
-
-	/* Grid layout for right-aligned blog posts */
-	/* Grid made with help from https://grid.layoutit.com/ */
-	.right {
-		display: grid;
-		grid-template-columns: 1.3fr 0.3fr 0.9fr 1.4fr 1fr;
-		grid-gap: 20px;
-	}
-
-	.right figure {
-		grid-column: 3 / 6;
-		grid-row: 1 / 4;
-	}
-
-	.right h2 {
-		z-index: 1;
-		align-self: flex-end;
-		justify-self: flex-end;
-		grid-column: 1 / 3;
-		grid-row: 1;
-		text-align: end;
-	}
-
-	.right p {
-		z-index: 1;
-		grid-column: 1 / 3;
-		grid-row: 2;
-		text-align: end;
-		justify-self: flex-end;
-	}
-
-	.right h3 {
-		grid-column: 2 / 5;
-		justify-self: flex-start;
-		align-self: flex-start;
-		grid-row: 3;
-	}
+.blogs p {
+	max-width: 40rem;
 }
 
 /* Contact page */
@@ -577,7 +493,7 @@ form input[type="submit"] {
 }
 
 /* Using flexbox here and set the width of each section to 50% as it is only a two column layout */
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.contact {
 		display: flex;
 	}
@@ -593,7 +509,7 @@ form input[type="submit"] {
 }
 
 /* blogs page styling */
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.blog-post p,
 	.blog-post h1,
 	.blog-post h2,
@@ -695,7 +611,7 @@ figcaption {
 	border-bottom: 4px solid #f8494f;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.cv {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
@@ -809,7 +725,7 @@ figcaption {
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.project-one a {
 		position: absolute;
 		bottom: 140px;
@@ -896,7 +812,7 @@ figcaption {
 	margin: 2rem auto;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.uxd-image-gallery {
 		display: flex;
 	}
@@ -924,7 +840,7 @@ footer {
 	padding: 1rem;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
 	footer {
 		margin-bottom: 5rem; /* increasing bottom margin to push socials above the bottom nav on mobile */
 	}
@@ -938,7 +854,7 @@ footer {
 	justify-content: center;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.socials {
 		flex-direction: row;
 	}
