@@ -133,6 +133,16 @@ nav a {
 	width: 100%;
 }
 
+.pagetitle {
+	font-weight: 400;
+	line-height: 1;
+	padding: 0 1rem;
+	position: absolute;
+	left: 0;
+	top: 10rem;
+	border-left: 250px solid #f8494f;
+}
+
 main {
 	margin: 2rem auto;
 	width: 80%;
@@ -373,6 +383,10 @@ main {
 
 /* Blogs page styling */
 
+.blogs {
+	margin-top: 15rem;
+}
+
 .blogs h2 {
 	color: #fff;
 }
@@ -388,8 +402,10 @@ main {
 }
 
 .blogs div {
+	margin: auto;
 	border-top: 5px solid #f8494f;
-	margin-top: 5rem;
+
+	max-width: 1200px;
 }
 
 .blogs div a {
