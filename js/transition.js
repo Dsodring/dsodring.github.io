@@ -98,13 +98,3 @@ barba.init({
 		}
 	]
 });
-
-/* Scroll to top animation (doesn't work atm) */
-/* const $toTop = document.querySelector(".to-top");
-$toTop.addEventListener("click", () => {
-	gsap.to(window, {
-		duration: 1,
-		scrollTo: 0,
-		ease: Power3.easeInOut
-	});
-}); */
