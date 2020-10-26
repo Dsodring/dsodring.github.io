@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 function pageTransition() {
 	var tl = gsap.timeline();
@@ -46,38 +47,48 @@ function pageTransition() {
 	);
 }
 
-function contentAnimation() {
-	gsap.from("main", {
-		duration: 1,
-		translateY: -50,
-		opacity: 0,
-		ease: Power2.easeOut
-	});
+let myAnim;
+const scrollAnimation = () => {
+	const text = gsap.utils.toArray('.blog-post article > *');
 
-	gsap.from(".blogs section", {
+	text.forEach(text => {
+		gsap.from(text, { 
+		y: 20,
+		opacity: 0, 
 		duration: 1,
-		translateY: -50,
-		opacity: 0,
-		stagger: 0.3,
-		ease: Power2.easeOut
-	});
-
-	gsap.from("article > *", {
-		duration: 1.5,
-		translateY: -50,
-		opacity: 0,
-		stagger: 0.2,
-		ease: Power2.easeOut
+		ease: Power2.easeInOut,
+		scrollTrigger: {
+			trigger: text,
+			scrub: 0.3,
+			end: "bottom 95%"
+			}
+		})
 	});
 }
 
-function delay(n) {
-	n = n || 1500;
-	return new Promise(done => {
-		setTimeout(() => {
-			done();
-		}, n);
-	});
+let scrollTop;
+const scrollTopAnimation = () => {
+	const $toTop = document.querySelector(".to-top");
+
+	$toTop.addEventListener("click", () => {
+		gsap.to(window, {
+			duration: 1,
+			scrollTo: 0,
+			ease: Power3.easeInOut
+		});
+});
+}
+
+if(typeof myAnim === "undefined") {
+	scrollAnimation();
+}
+
+if(typeof scrollTop === "undefined") {
+	scrollTopAnimation();
+}
+
+function delay(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 barba.init({
@@ -91,10 +102,13 @@ barba.init({
 				await delay(1500);
 				done();
 			},
-
 			async enter(data) {
-				contentAnimation();
-			}
+				setTimeout(scrollAnimation, 10);
+				setTimeout(scrollTopAnimation, 10);
+			},
 		}
 	]
 });
+
+
+

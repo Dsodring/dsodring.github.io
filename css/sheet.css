@@ -407,8 +407,8 @@ main {
 .blogs div {
 	margin: auto;
 	border-top: 5px solid #f8494f;
-
 	max-width: 1200px;
+	margin-top: 5rem;
 }
 
 .blogs div a {
@@ -472,7 +472,7 @@ form input[type="submit"] {
 	min-width: 0;
 	/* turn off a minimum width for the button and let the browser work it out */
 	background-color: #f8494f;
-	transition: 0.2s;
+	transition: 0.1s;
 	border: 0;
 	padding: 13px 30px;
 	margin-top: 10px;
@@ -490,7 +490,7 @@ form input[type="submit"] {
 #contact-name:hover,
 #contact-email:hover,
 #contact-message:hover {
-	transition: 0.2s;
+	transition: 0.1s;
 	border-color: #f8494f;
 }
 
@@ -507,7 +507,7 @@ form input[type="submit"] {
 }
 
 .submit-form:hover {
-	transition: 0.2s;
+	transition: 0.1s;
 	background-color: #f8494f;
 }
 
@@ -534,13 +534,7 @@ form input[type="submit"] {
 
 /* blogs page styling */
 @media (min-width: 900px) {
-	.blog-post p,
-	.blog-post h1,
-	.blog-post h2,
-	.blog-post h3,
-	.blog-post figure,
-	.blog-post figcaption,
-	.blog-post ul {
+	.blog-post > * {
 		max-width: 40rem;
 		margin-left: auto;
 		margin-right: auto;
@@ -587,11 +581,11 @@ form input[type="submit"] {
 
 .blog-post a {
 	border-bottom: 2px solid #f8494f;
-	transition: 0.2s;
+	transition: 0.1s;
 }
 
 .blog-post a:hover {
-	transition: 0.2s;
+	transition: 0.1s;
 	border-bottom: 4px solid #f8494f;
 }
 
@@ -649,11 +643,11 @@ figcaption {
 
 .cv a {
 	border-bottom: 2px solid #f8494f;
-	transition: 0.2s;
+	transition: 0.1s;
 }
 
 .cv a:hover {
-	transition: 0.2s;
+	transition: 0.1s;
 	border-bottom: 4px solid #f8494f;
 }
 
@@ -675,7 +669,7 @@ figcaption {
 	padding: 1rem 2rem;
 	text-transform: uppercase;
 	background-color: #f8494f;
-	transition: 0.2s;
+	transition: 0.1s;
 	color: #fff;
 	display: inline-block;
 	margin-top: 0.5rem;
@@ -696,7 +690,7 @@ figcaption {
 }
 
 .projects a:hover {
-	transition: 0.2s;
+	transition: 0.1s;
 	background-color: #97151a;
 }
 .projects section {
@@ -766,11 +760,11 @@ figcaption {
 
 .project-page a {
 	border-bottom: 2px solid #f8494f;
-	transition: 0.2s;
+	transition: 0.1s;
 }
 
 .project-page a:hover {
-	transition: 0.2s;
+	transition: 0.1s;
 	border-bottom: 4px solid #f8494f;
 }
 
@@ -898,7 +892,7 @@ footer {
 	font-family: "Montserrat", Tahoma, Helvetica, sans-serif;
 	background-color: #f6eee3;
 	border: 2px solid #f8494f;
-	transition: 0.2s;
+	transition: 0.1s;
 	height: 45px;
 	width: 220px;
 	padding: 0 0.7rem;
@@ -919,7 +913,7 @@ footer {
 .weather-app select:hover {
 	background-color: #f6eee3;
 	border: 2px solid #f8494f;
-	transition: 0.2s;
+	transition: 0.1s;
 }
 
 .weather-app select option {
