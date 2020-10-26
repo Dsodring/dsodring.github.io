@@ -45,14 +45,6 @@ function pageTransition() {
 		},
 		"-=0.45"
 	);
-
-	tl.to(
-		".pagetitle",
-		{
-			duration: 1,
-			border-left-width
-		}
-	)
 }
 
 let scrollBlog;
