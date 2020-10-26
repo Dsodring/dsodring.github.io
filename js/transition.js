@@ -59,7 +59,7 @@ const scrollAnimation = () => {
 		ease: Power3.easeInOut,
 		scrollTrigger: {
 			trigger: text,
-			scrub: 0.3,
+			scrub: 0.5,
 			end: "bottom 95%"
 			}
 		})
@@ -78,7 +78,7 @@ const scrollProjectAnimation = () => {
 		ease: Power3.easeInOut,
 		scrollTrigger: {
 			trigger: text,
-			scrub: 0.3,
+			scrub: 0.5,
 			end: "bottom 95%"
 			}
 		})
@@ -164,6 +164,26 @@ const scrollBlogPageAnimation = () => {
 		scrollTrigger: {
 			trigger: text,
 			scrub: 0.5,
+			end: "bottom 95%",
+			markers: true,
+			}
+		})
+	});
+}
+
+let scrollCv;
+const scrollCvAnimation = () => {
+	const text = gsap.utils.toArray('.cv section');
+	
+	text.forEach(text => {
+		gsap.from(text, { 
+		y: 20,
+		opacity: 0, 
+		duration: 1,
+		ease: Power3.easeInOut,
+		scrollTrigger: {
+			trigger: text,
+			scrub:1,
 			end: "bottom 95%"
 			}
 		})
@@ -198,6 +218,10 @@ if(typeof scrollBlogPage === "undefined") {
 	scrollBlogPageAnimation();
 }
 
+if(typeof scrollCv === "undefined") {
+	scrollCvAnimation();
+}
+
 function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -220,6 +244,7 @@ barba.init({
 				setTimeout(scrollHomeAnimation);
 				setTimeout(scrollHomeImgAnimation);
 				setTimeout(scrollBlogPageAnimation);
+				setTimeout(scrollCvAnimation);
 			}
 		}
 	]
