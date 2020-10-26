@@ -45,9 +45,17 @@ function pageTransition() {
 		},
 		"-=0.45"
 	);
+
+	tl.to(
+		".pagetitle",
+		{
+			duration: 1,
+			border-left-width
+		}
+	)
 }
 
-let myAnim;
+let scrollBlog;
 const scrollAnimation = () => {
 	const text = gsap.utils.toArray('.blog-post article > *');
 
@@ -56,7 +64,7 @@ const scrollAnimation = () => {
 		y: 20,
 		opacity: 0, 
 		duration: 1,
-		ease: Power2.easeInOut,
+		ease: Power3.easeInOut,
 		scrollTrigger: {
 			trigger: text,
 			scrub: 0.3,
@@ -66,25 +74,136 @@ const scrollAnimation = () => {
 	});
 }
 
-let scrollTop;
-const scrollTopAnimation = () => {
-	const $toTop = document.querySelector(".to-top");
+let scrollProject;
+const scrollProjectAnimation = () => {
+	const text = gsap.utils.toArray('.project-page > *');
 
-	$toTop.addEventListener("click", () => {
-		gsap.to(window, {
-			duration: 1,
-			scrollTo: 0,
-			ease: Power3.easeInOut
-		});
-});
+	text.forEach(text => {
+		gsap.from(text, { 
+		y: 20,
+		opacity: 0, 
+		duration: 1,
+		ease: Power3.easeInOut,
+		scrollTrigger: {
+			trigger: text,
+			scrub: 0.3,
+			end: "bottom 95%"
+			}
+		})
+	});
 }
 
-if(typeof myAnim === "undefined") {
+let scrollHome;
+const scrollHomeAnimation = () => {
+	const text = gsap.utils.toArray('.homepage-projects div');
+	
+	text.forEach(text => {
+		gsap.from(text, { 
+		y: 70,
+		opacity: 0, 
+		duration: 1,
+		ease: Power3.easeInOut,
+		scrollTrigger: {
+			trigger: text,
+			scrub: 3,
+			end: "bottom 95%"
+			}
+		})
+	});
+}
+
+let scrollHomeImg;
+const scrollHomeImgAnimation = () => {
+	const text = gsap.utils.toArray('.homepage-projects div + img');
+	
+	text.forEach(text => {
+		gsap.from(text, { 
+		y: 70,
+		opacity: 0, 
+		duration: 1,
+		ease: Power3.easeInOut,
+		scrollTrigger: {
+			trigger: text,
+			scrub: 3,
+			end: "bottom 95%"
+			}
+		})
+	});
+}
+
+let scrollTop;
+const scrollTopAnimation = () => {
+	const $toTop = document.querySelector('.to-top');
+	if($toTop){
+		$toTop.addEventListener("click", () => {
+			gsap.to(window, {
+				duration: 1,
+				scrollTo: 0,
+				ease: Power3.easeInOut
+			});
+		});
+	  }  
+}
+
+let scrollToProjects;
+const scrollProjects = () => {
+	const $toProjects = document.querySelector('.scroll-down');
+	if($toProjects){
+		$toProjects.addEventListener("click", () => {
+			gsap.to(window, {
+				duration: 1,
+				scrollTo: "#scroll-projets",
+				ease: Power3.easeInOut
+			});
+		});
+	  }  
+}
+
+let scrollBlogPage;
+const scrollBlogPageAnimation = () => {
+	const text = gsap.utils.toArray('.blogs div');
+	
+	text.forEach(text => {
+		gsap.from(text, { 
+		y: 70,
+		opacity: 0, 
+		duration: 1,
+		ease: Power3.easeInOut,
+		scrollTrigger: {
+			trigger: text,
+			scrub: 0.5,
+			end: "bottom 95%"
+			}
+		})
+	});
+}
+
+if(typeof scrollBlog === "undefined") {
 	scrollAnimation();
+}
+
+if(typeof scrollBlog === "undefined") {
+	scrollProjectAnimation();
+}
+
+if(typeof scrollHome === "undefined") {
+	scrollHomeAnimation();
+}
+
+if(typeof scrollHomeImg === "undefined") {
+	scrollHomeImgAnimation();
 }
 
 if(typeof scrollTop === "undefined") {
 	scrollTopAnimation();
+}
+
+if(typeof scrollToProjects === "undefined") {
+	scrollProjects();
+}
+
+if(typeof scrollBlogPage === "undefined") {
+	scrollBlogPageAnimation();
 }
 
 function delay(ms) {
@@ -93,19 +212,23 @@ function delay(ms) {
 
 barba.init({
 	sync: true,
-
 	transitions: [
 		{
-			async leave(data) {
+			async leave() {
 				const done = this.async();
 				pageTransition();
 				await delay(1500);
 				done();
 			},
-			async enter(data) {
+			async enter() {
 				setTimeout(scrollAnimation, 10);
-				setTimeout(scrollTopAnimation, 10);
-			},
+				setTimeout(scrollTopAnimation);
+				setTimeout(scrollProjects);
+				setTimeout(scrollProjectAnimation);
+				setTimeout(scrollHomeAnimation);
+				setTimeout(scrollHomeImgAnimation);
+				setTimeout(scrollBlogPageAnimation);
+			}
 		}
 	]
 });
