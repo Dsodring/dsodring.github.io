@@ -209,10 +209,6 @@ main {
 
 /* Homepage styling */
 
-* {
-	outline: 1px solid red;
-}
-
 .about h1 {
 	font-size: 5vw;
 }
@@ -396,7 +392,75 @@ main {
 	}
 }
 
-/* Blogs page styling */
+/* blogs page styling */
+@media (min-width: 900px) {
+	.blog-post > * {
+		max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.blog-post {
+		max-width: 50rem;
+	}
+
+	.blog-post h1 {
+		margin-top: 2rem;
+	}
+}
+
+.blog-post li {
+	padding: 0.5rem;
+}
+
+.author {
+	font-size: 1em;
+	font-style: italic;
+}
+
+.blog-post {
+	width: 100%;
+	padding: 1rem;
+}
+
+.blog-post h3 {
+	color: #f8494f;
+}
+
+.blog-post article {
+	position: relative;
+}
+
+.blog-post img {
+	border: 2px solid #e7d6c4;
+	background: #e7d6c4;
+	max-width: 80%;
+	margin: 0 1rem;
+	max-height: 400px;
+}
+
+.blog-post a {
+	border-bottom: 2px solid #f8494f;
+	transition: 0.1s;
+}
+
+.blog-post a:hover {
+	transition: 0.1s;
+	border-bottom: 4px solid #f8494f;
+}
+
+.blog-post .to-top {
+	width: 80px;
+	cursor: pointer;
+	border-bottom: 2px solid #f8494f;
+}
+
+figcaption {
+	padding: 0 2rem;
+	font-style: italic;
+}
+
+/* Blog posts styling */
 
 .blogs {
 	margin-top: 5rem;
@@ -543,74 +607,6 @@ form input[type="submit"] {
 	.about-contact-page p {
 		max-width: 35rem;
 	}
-}
-
-/* blogs page styling */
-@media (min-width: 900px) {
-	.blog-post > * {
-		max-width: 40rem;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.blog-post {
-		max-width: 50rem;
-	}
-
-	.blog-post h1 {
-		margin-top: 2rem;
-	}
-}
-
-.blog-post li {
-	padding: 0.5rem;
-}
-
-.author {
-	font-size: 1em;
-	font-style: italic;
-}
-
-.blog-post {
-	width: 100%;
-	padding: 1rem;
-}
-
-.blog-post h3 {
-	color: #f8494f;
-}
-
-.blog-post article {
-	position: relative;
-}
-
-.blog-post img {
-	border: 2px solid #e7d6c4;
-	background: #e7d6c4;
-	max-width: 80%;
-	margin: 0 1rem;
-	max-height: 400px;
-}
-
-.blog-post a {
-	border-bottom: 2px solid #f8494f;
-	transition: 0.1s;
-}
-
-.blog-post a:hover {
-	transition: 0.1s;
-	border-bottom: 4px solid #f8494f;
-}
-
-.blog-post .to-top {
-	width: 80px;
-	cursor: pointer;
-	border-bottom: 2px solid #f8494f;
-}
-
-figcaption {
-	padding: 0 2rem;
-	font-style: italic;
 }
 
 /* CV page */
