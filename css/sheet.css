@@ -209,6 +209,10 @@ main {
 
 /* Homepage styling */
 
+* {
+	outline: 1px solid red;
+}
+
 .about h1 {
 	font-size: 5vw;
 }
@@ -268,7 +272,7 @@ main {
 }
 
 .timeline img {
-	max-width: 80vw;
+	max-width: 70vw;
 	box-shadow: none;
 	display: block;
 	margin: auto;
@@ -281,7 +285,7 @@ main {
 
 .scroll-button {
 	margin: auto;
-	width: 400px;
+	width: 300px;
 	cursor: pointer;
 }
 
@@ -666,103 +670,7 @@ figcaption {
 	border-bottom: 4px solid #f8494f;
 }
 
-/* Projects page */
-.project-one img {
-	width: 100%;
-	max-width: 200px;
-	height: auto;
-}
-
-.project-two img {
-	width: 100%;
-	max-width: 700px;
-	height: auto;
-}
-
-.projects a {
-	font-size: 1.2em;
-	padding: 1rem 2rem;
-	text-transform: uppercase;
-	background-color: #f8494f;
-	transition: 0.1s;
-	color: #fff;
-	display: inline-block;
-	margin-top: 0.5rem;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
-		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
-		0 16px 16px rgba(0, 0, 0, 0.12);
-	width: 200px;
-}
-
-.project-left {
-	display: flex;
-	flex-direction: column;
-}
-
-.project-right {
-	display: flex;
-	flex-direction: column;
-}
-
-.projects a:hover {
-	transition: 0.1s;
-	background-color: #97151a;
-}
-.projects section {
-	margin-bottom: 3rem;
-}
-
-@media (max-width: 900px) {
-	.project-two h1 {
-		line-height: 3.5rem;
-	}
-}
-
-@media (min-width: 900px) {
-	.project-one a {
-		position: absolute;
-		bottom: 140px;
-		left: 104px;
-	}
-
-	.project-one h1 {
-		display: block;
-		position: absolute;
-		top: 90px;
-		left: 104px;
-		transform: rotate(90deg);
-	}
-
-	.project-one {
-		position: relative;
-	}
-
-	.project-two a {
-		position: absolute;
-		bottom: 20px;
-		right: 100px;
-	}
-
-	.project-two h1 {
-		line-height: 1;
-		display: block;
-		position: absolute;
-		top: 90px;
-		right: -23px;
-		transform: rotate(90deg);
-	}
-
-	.project-two {
-		position: relative;
-	}
-
-	.project-right img {
-		align-self: flex-end;
-		margin-right: 10rem;
-	}
-}
-
-/* Project one - User Experience Design - University Project */
+/* projects page */
 .project-page {
 	max-width: 50rem;
 	margin: auto;
@@ -847,11 +755,6 @@ footer {
 	justify-content: center;
 }
 
-@media (min-width: 900px) {
-	.socials {
-		flex-direction: row;
-	}
-}
 .socials a {
 	margin: 0 0.2rem;
 	padding: 1rem;

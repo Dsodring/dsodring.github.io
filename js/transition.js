@@ -165,7 +165,6 @@ const scrollBlogPageAnimation = () => {
 			trigger: text,
 			scrub: 0.5,
 			end: "bottom 95%",
-			markers: true,
 			}
 		})
 	});
