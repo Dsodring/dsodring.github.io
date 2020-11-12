@@ -432,8 +432,8 @@ main {
 }
 
 .blog-post img {
-	border: 2px solid #e7d6c4;
-	background: #e7d6c4;
+	border: 2px solid #eee;
+	background: #eee;
 	max-width: 80%;
 	margin: 0 1rem;
 	max-height: 400px;
@@ -692,8 +692,8 @@ form input[type="submit"] {
 }
 
 .project-page img {
-	background-color: #e7d6c4;
-	border: 2px solid #e7d6c4;
+	background-color: #eee;
+	border: 2px solid #eee;
 }
 
 .uxd-userflow {

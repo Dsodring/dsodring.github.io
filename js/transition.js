@@ -49,7 +49,7 @@ function pageTransition() {
 
 let scrollBlog;
 const scrollAnimation = () => {
-	const text = gsap.utils.toArray('.blog-post article > *');
+	const text = gsap.utils.toArray('.blog-post article > figure img');
 
 	text.forEach(text => {
 		gsap.from(text, { 
@@ -60,26 +60,7 @@ const scrollAnimation = () => {
 		scrollTrigger: {
 			trigger: text,
 			scrub: 0.5,
-			end: "bottom 95%"
-			}
-		})
-	});
-}
-
-let scrollProject;
-const scrollProjectAnimation = () => {
-	const text = gsap.utils.toArray('.project-page > *');
-
-	text.forEach(text => {
-		gsap.from(text, { 
-		y: 20,
-		opacity: 0, 
-		duration: 1,
-		ease: Power3.easeInOut,
-		scrollTrigger: {
-			trigger: text,
-			scrub: 0.5,
-			end: "bottom 95%"
+			end: "bottom 60%"
 			}
 		})
 	});
@@ -193,10 +174,6 @@ if(typeof scrollBlog === "undefined") {
 	scrollAnimation();
 }
 
-if(typeof scrollBlog === "undefined") {
-	scrollProjectAnimation();
-}
-
 if(typeof scrollHome === "undefined") {
 	scrollHomeAnimation();
 }
@@ -239,7 +216,6 @@ barba.init({
 				setTimeout(scrollAnimation, 10);
 				setTimeout(scrollTopAnimation);
 				setTimeout(scrollProjects);
-				setTimeout(scrollProjectAnimation);
 				setTimeout(scrollHomeAnimation);
 				setTimeout(scrollHomeImgAnimation);
 				setTimeout(scrollBlogPageAnimation);
