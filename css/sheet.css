@@ -877,7 +877,7 @@ footer {
 	display: block;
 	font-family: "Montserrat", Tahoma, Helvetica, sans-serif;
 	background-color: #f6eee3;
-	border: 2px solid #f8494f;
+	border: 2px solid #f6eee3;
 	transition: 0.1s;
 	height: 45px;
 	width: 220px;
@@ -898,7 +898,7 @@ footer {
 }
 .weather-app select:hover {
 	background-color: #f6eee3;
-	border: 2px solid #f8494f;
+	border: 2px solid #f6eee3;
 	transition: 0.1s;
 }
 
