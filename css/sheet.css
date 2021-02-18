@@ -523,14 +523,10 @@ figcaption {
 	color: #fff;
 }
 
-.blog-number {
-	font-weight: 400;
-	color: #f8494f;
-}
-
 .blogs h3 {
 	font-weight: 400;
 	font-size: 1.2em;
+	color: #f8494f;
 }
 
 .blogs img {
